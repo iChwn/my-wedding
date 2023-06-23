@@ -7,7 +7,7 @@ import "assets/css/custom.scss"
 const HomePage = () => {
   const [isExit, setIsExit] = useState(false)
   const { rive, RiveComponent, canvas } = useRive({
-    src: '/invitation.riv',
+    src: '/invitation-2.riv',
     autoplay: true,
     stateMachines: "State Machine 1",
     animations: 'Idle',
