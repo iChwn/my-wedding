@@ -43,7 +43,7 @@ button {
 .circle-white {
   width: 50px;
   height: 50px;
-  background-color: #394359;
+  background: #191932;
   border-radius: 5em;
   position: absolute;
   z-index: 2;
@@ -62,7 +62,11 @@ button {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
-  background-color: #394359;
+  background: #191932;
+}
+.bg-galaxy {
+  background: #191932;
+  transition: all 3s;
 }
 .circle-white-scale:hover::after {
   transform: scale(1.5);

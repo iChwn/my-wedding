@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
-        'roboto': ['Roboto']
+        'roboto': ['Roboto'],
+        'poppins': ['poppins','Arial'],
       },
       boxShadow: {
         'higher': '0px 2px 12px 0px rgba(30,30,30,0.16);',
