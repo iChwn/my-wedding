@@ -6,8 +6,10 @@ import "assets/css/custom.scss"
 
 const HomePage = () => {
   const [isExit, setIsExit] = useState(false)
+  const lgQuery = useMediaQuery("only screen and (min-width: 1025px)");
+  console.log(lgQuery)
   const { rive, RiveComponent, canvas } = useRive({
-    src: '/invitation-2.riv',
+    src: lgQuery ? '/invitation-2.riv' : '/invitation-mobile.riv',
     autoplay: true,
     stateMachines: "State Machine 1",
     animations: 'Idle',
@@ -23,8 +25,11 @@ const HomePage = () => {
         canvas.style.display = "none";
       } 
     },
+    onLoad: () => {  
+      // Log the contents of the Rive file
+      console.log(canvas);
+    },
   });
-  const lgQuery = useMediaQuery("only screen and (min-width: 1025px)");
   const isHoverInput = useStateMachineInput(rive, "State Machine 1", "PointerIn");
 
   useEffect(() => {
@@ -52,9 +57,7 @@ const HomePage = () => {
   return (
     <div className="h-full w-full flex items-center justify-center flex-col">
       <div id="transition" className={`circle-white circle-white-scale ${isExit && 'scale-circle'}`} style={{top: 30}}></div>
-      <RiveComponent
-        onMouseEnter={() => console.log("mouse enter")}
-      />
+      <RiveComponent />
     </div>
   )
 }
