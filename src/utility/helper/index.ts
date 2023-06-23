@@ -1,4 +1,5 @@
 import { handleChangeField, handleChangeCheckbox, handleChangeFile, handleChangeSelect, handleChangeTimeRange, handleSelectEdit } from "./dataMutation";
+import useMediaQuery from "./useMediaBreakpoint";
 
 export {
   handleChangeField,
@@ -6,6 +7,6 @@ export {
   handleChangeFile,
   handleChangeSelect,
   handleChangeTimeRange,
-  handleSelectEdit
-  
+  handleSelectEdit,
+  useMediaQuery
 }
