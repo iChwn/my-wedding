@@ -9,7 +9,7 @@ const Opening = ({callback}:any) => {
   const [isExit, setIsExit] = useState(false)
   // const navigate = useNavigate()
   const lgQuery = useMediaQuery("only screen and (min-width: 1025px)");
-  const { rive, RiveComponent, canvas } = useRive({
+  const { rive, RiveComponent } = useRive({
     src: lgQuery ? '/invitation-2.riv' : '/invitation-mobile.riv',
     autoplay: true,
     stateMachines: "State Machine 1",

@@ -1,0 +1,1 @@
+export { default as WeddingPhoto1 } from "./photo1.jpg";

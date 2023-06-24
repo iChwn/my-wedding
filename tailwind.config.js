@@ -8,6 +8,7 @@ module.exports = {
         'sans': ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
         'roboto': ['Roboto'],
         'poppins': ['poppins','Arial'],
+        'black-hole': ['black-hole','Arial'],
       },
       boxShadow: {
         'higher': '0px 2px 12px 0px rgba(30,30,30,0.16);',
@@ -16,6 +17,10 @@ module.exports = {
         'dark-green': '#096357',
         'soft-green': '#08AE92',
         'dark-brown': '#bb9b77'
+      },
+      animation: {
+        'spin-slow-20s': 'spin 20s linear infinite',
+        'spin-slow-30s': 'spin 30s linear infinite',
       }
     },
   },

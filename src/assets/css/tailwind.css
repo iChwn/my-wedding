@@ -6,3 +6,7 @@
   font-family: "poppins";
   src: url("../fonts/poppins.ttf");
 }
+@font-face {
+  font-family: "black-hole";
+  src: url("../fonts/black-hole.ttf");
+}
