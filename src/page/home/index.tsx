@@ -4,9 +4,13 @@ import { Fade, Zoom, Flip } from 'react-reveal'
 import 'assets/css/custom.scss'
 import { background_image, wedding_image } from 'assets/image'
 import Snowfall from 'react-snowfall'
+import { BaseCountdown } from 'components'
+import Countdown from 'react-countdown'
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
+	const [content, setContent] = useState('opening')
+  const snowflake1 = document.createElement('img')
+  snowflake1.src = background_image.meteor_fire
 	const transitionCallback = () => {
 		setContent('main-content')
 		console.log('transitionCallback')
@@ -19,11 +23,11 @@ const HomePage = () => {
 				<div className='h-full w-full bg-galaxy overflow-auto'>
 					<div className='h-screen w-full flex items-center justify-center flex-col relative'>
 						<div className='absolute top-0 w-full h-full z-10'>
-							<Snowfall color="white" snowflakeCount={100} radius={[1,2]}  />
+							<Snowfall color="white" changeFrequency={0} snowflakeCount={100} radius={[1, 2]} wind={[0, 0]} />
 						</div>
-						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden'>
+						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden gap-3'>
 							<Fade top delay={1000} duration={1500} opa>
-								<h1 className='font-black-hole md:text-7xl text-6xl text-[#FFFFFF] md:pb-[40px] pb-[15px] text-center'>
+								<h1 className='font-black-hole md:text-7xl text-6xl text-[#FFFFFF] text-center'>
 									Undangan Pernikahan
 								</h1>
 							</Fade>
@@ -99,21 +103,21 @@ const HomePage = () => {
 								</Zoom>
 							</div>
 							<Flip cascade top delay={1000}>
-								<h1 className='font-black-hole md:text-7xl mt-4 text-5xl text-[#FFFFFF]'>
+								<h1 className='font-black-hole md:text-7xl text-5xl text-[#FFFFFF]'>
 									Ichwan & Salma
 								</h1>
-								<span className='font-poppins text-center md:text-lg text-xs text-gray-500 tracking-[4px] mt-4'>
+								<span className='font-poppins text-center md:text-lg text-xs text-gray-500 tracking-[4px]'>
 									AHAD, 24 JULI 2022
 								</span>
 							</Flip>
-							<Fade delay={1500}>
+							{/* <Fade delay={1500}>
 								<div className='scroll-wrapper absolute'>
 									<div className='chevron'></div>
 									<div className='chevron'></div>
 									<div className='chevron'></div>
 									<span className='text'>Scroll Kebawah</span>
 								</div>
-							</Fade>
+							</Fade> */}
 						</div>
 					</div>
 					<div className="w-full flex items-center justify-center flex-col relative">
@@ -130,9 +134,9 @@ const HomePage = () => {
             <div className="flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-500 z-10">
               <div className="flex flex-col items-center">
                 <div className="relative">
-                  <Fade delay={1000} duration={3000} bottom>
-                    <div className="relative z-[-1]">
-                      <img src={background_image.planet_profile} alt="" className="absolute animate-spin-slow-20s" />
+                  <Fade delay={500} duration={3000}>
+                    <div className="absolute z-[-1] w-[150px] h-[150px]" style={{scale: '1.3'}}>
+                      <img src={background_image.planet_profile} alt="" className="relative animate-spin-slow-20s" />
                     </div>
                   </Fade>
                   <div className="rounded-full h-[150px] w-[150px] overflow-hidden">
@@ -149,9 +153,9 @@ const HomePage = () => {
               </div>
               <div className="flex flex-col items-center">
                 <div className="relative">
-                  <Fade delay={1000} duration={3000} bottom>
-                    <div className="relative z-[-1]">
-                      <img src={background_image.planet_profile} alt="" className="absolute animate-spin-slow-20s" />
+                  <Fade delay={500} duration={3000}>
+                    <div className="absolute z-[-1] w-[150px] h-[150px]" style={{scale: '1.3'}}>
+                      <img src={background_image.planet_profile} alt="" className="relative animate-spin-slow-20s" />
                     </div>
                   </Fade>
                   <div className="rounded-full h-[150px] w-[150px] overflow-hidden">

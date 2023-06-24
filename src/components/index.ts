@@ -12,6 +12,7 @@ import SidebarComponent from "./molecules/sidebar";
 import SimpleAside from "./molecules/sidebar/simple-aside";
 import SimpleNavbar from "./molecules/navbar/simple-navbar";
 import SimpleTemplate from "./organism/templates/simple-sidebar-nav";
+import BaseCountdown from "./molecules/countdown";
 // Organism
 
 export { 
@@ -23,5 +24,6 @@ export {
   SimpleAside,
   SimpleNavbar,
   SimpleTemplate,
-  StyledButton
+  StyledButton,
+  BaseCountdown
 };

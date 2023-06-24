@@ -11,5 +11,6 @@ export { default as ufo } from "./ufo.svg";
 export { default as rocket } from "./rocket.svg";
 export { default as red_planet } from "./red-planet.svg";
 export { default as planet_profile } from "./planet-profile.svg";
+export { default as meteor_fire } from "./meteor-fire.svg";
 
  

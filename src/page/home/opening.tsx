@@ -8,9 +8,10 @@ import "assets/css/custom.scss"
 const Opening = ({callback}:any) => {
   const [isExit, setIsExit] = useState(false)
   // const navigate = useNavigate()
-  const lgQuery = useMediaQuery("only screen and (min-width: 1025px)");
+  const smQuery = useMediaQuery("only screen and (min-width: 700px)");
+  // const mdQuery = useMediaQuery("only screen and (min-width: 1025px)");
   const { rive, RiveComponent } = useRive({
-    src: lgQuery ? '/invitation-2.riv' : '/invitation-mobile.riv',
+    src: smQuery ? '/invitation-2.riv' : '/invitation-mobile.riv',
     autoplay: true,
     stateMachines: "State Machine 1",
     animations: 'Idle',
@@ -32,7 +33,7 @@ const Opening = ({callback}:any) => {
 
   useEffect(() => {
     if (rive) {
-      if (lgQuery) {
+      if (smQuery) {
         rive!.layout = new Layout({
           fit: Fit.Contain,
           alignment: Alignment.Center,
@@ -44,7 +45,7 @@ const Opening = ({callback}:any) => {
         });
       }
     }
-  }, [rive, lgQuery]);
+  }, [rive, smQuery]);
 
   // useEffect(() => {
   //   if (rive && isHoverInput) {
