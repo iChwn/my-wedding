@@ -8,22 +8,36 @@ import { BaseCountdown } from 'components'
 import Countdown from 'react-countdown'
 
 const HomePage = () => {
-	const [content, setContent] = useState('opening')
-  const snowflake1 = document.createElement('img')
-  snowflake1.src = background_image.meteor_fire
+	const [content, setContent] = useState('main-content')
+	const snowflake1 = document.createElement('img')
+	snowflake1.src = background_image.meteor_fire
 	const transitionCallback = () => {
 		setContent('main-content')
 		console.log('transitionCallback')
 	}
+	var current_date = Date.now()
+  var finish_date = new Date('2023-07-25T00:20:00')
+
+  var total_ms = finish_date.getTime() - current_date;
 
 	return (
 		<div className='h-full w-full flex items-center justify-center flex-col'>
 			{content === 'opening' && <Opening callback={transitionCallback} />}
 			{content === 'main-content' && (
-				<div className='h-full w-full bg-galaxy overflow-auto'>
+				<div
+					className={`h-full w-full bg-galaxy overflow-auto ${
+						content === 'main-content' ? 'block' : 'hidden'
+					}`}
+				>
 					<div className='h-screen w-full flex items-center justify-center flex-col relative'>
 						<div className='absolute top-0 w-full h-full z-10'>
-							<Snowfall color="white" changeFrequency={0} snowflakeCount={100} radius={[1, 2]} wind={[0, 0]} />
+							<Snowfall
+								color='white'
+								changeFrequency={0}
+								snowflakeCount={100}
+								radius={[1, 2]}
+								wind={[0, 0]}
+							/>
 						</div>
 						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden gap-3'>
 							<Fade top delay={1000} duration={1500} opa>
@@ -120,88 +134,116 @@ const HomePage = () => {
 							</Fade> */}
 						</div>
 					</div>
-					<div className="w-full flex items-center justify-center flex-col relative">
-        <div className="max-w-5xl w-full flex flex-col items-center gap-y-3">
-          <Fade bottom>
-            <span className="text-center font-poppins text-md font-normal px-5 text-[#FFFFFF]">
-              Assalamualaikum Warahmatullahi Wabarakatuh
-            </span>
-            <span className="text-center font-poppins text-md font-normal mb-4 px-5 text-[#FFFFFF]">
-              Dengan Memohon Ridho Serta Rahmat Allah SWT. Kami Bermaksud Memohon
-              Do'a Restu Serta Mengundang Bapak/Ibu/Saudara/I Pada Pernikahan Kami
-              :
-            </span>
-            <div className="flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-500 z-10">
-              <div className="flex flex-col items-center">
-                <div className="relative">
-                  <Fade delay={500} duration={3000}>
-                    <div className="absolute z-[-1] w-[150px] h-[150px]" style={{scale: '1.3'}}>
-                      <img src={background_image.planet_profile} alt="" className="relative animate-spin-slow-20s" />
-                    </div>
-                  </Fade>
-                  <div className="rounded-full h-[150px] w-[150px] overflow-hidden">
-                    <img src={wedding_image.DereynaPhoto} alt="" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <h1 className="font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4">
-                  Salma Juniarti
-                </h1>
-                <span className="font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]">
-                  <span className="font-semibold">Putri dari</span> 
-                  <br /> Bapak Herry Bosscha & Ibu Ida Syadiah
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="relative">
-                  <Fade delay={500} duration={3000}>
-                    <div className="absolute z-[-1] w-[150px] h-[150px]" style={{scale: '1.3'}}>
-                      <img src={background_image.planet_profile} alt="" className="relative animate-spin-slow-20s" />
-                    </div>
-                  </Fade>
-                  <div className="rounded-full h-[150px] w-[150px] overflow-hidden">
-                    <img src={wedding_image.JanakaPhoto} alt="" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-                <h1 className="font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4">
-                  Ichwan Arif Pratama
-                </h1>
-                <span className="font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]">
-                  <span className="font-semibold">Putra dari</span> <br/> 
-                  Bapak Iman Ramadhan & Ibu Sri Mustikawarni
-                </span>
-              </div>
-            </div>
-          </Fade>
-          {/* <Countdown
-            date={dayjs() + Math.abs(dateNow.diff(startDate))}
-            renderer={({ days, hours, minutes, seconds, completed }) => (
-              <BaseCountdown
-                days={days}
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-                isCompleted={completed}
-              />
-            )}
-          /> */}
-          <Fade bottom>
-            <div className="z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-500 py-3 text-[#FFFFFF]">
-              <span className="font-semibold text-xl">
-                Gedung Graha Indah Karya
-              </span>
-              <span>
-                Jl. Golf Raya No. 2A Cisaranten Bina Harapan, <br /> Kec.
-                Arcamanik, Kota Bandung
-              </span>
-            </div>
-          </Fade>
-          <div className="relative flex md:flex-row flex-col gap-5 w-full items-center justify-center mb-5 p-3">
-            <Fade delay={500} duration={3000}>
-              <div className="absolute brightness-50 ">
-								<img src={background_image.red_planet} alt="" className='w-full floating-element' />
-							</div>
-            </Fade>
-            {/* <Zoom>
+					<div className='w-full flex items-center justify-center flex-col relative'>
+						<div className='max-w-5xl w-full flex flex-col items-center gap-y-3'>
+							<Fade bottom>
+								<span className='text-center font-poppins text-md font-normal px-5 text-[#FFFFFF]'>
+									Assalamualaikum Warahmatullahi Wabarakatuh
+								</span>
+								<span className='text-center font-poppins text-md font-normal mb-4 px-5 text-[#FFFFFF]'>
+									Dengan Memohon Ridho Serta Rahmat Allah SWT. Kami Bermaksud
+									Memohon Do'a Restu Serta Mengundang Bapak/Ibu/Saudara/I Pada
+									Pernikahan Kami :
+								</span>
+								<div className='flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-500 z-10'>
+									<div className='flex flex-col items-center'>
+										<div className='relative'>
+											<Fade delay={500} duration={3000}>
+												<div
+													className='absolute z-[-1] w-[150px] h-[150px]'
+													style={{ scale: '1.3' }}
+												>
+													<img
+														src={background_image.planet_profile}
+														alt=''
+														className='relative animate-spin-slow-20s'
+													/>
+												</div>
+											</Fade>
+											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
+												<img
+													src={wedding_image.DereynaPhoto}
+													alt=''
+													className='w-full h-full object-cover'
+												/>
+											</div>
+										</div>
+										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
+											Salma Juniarti
+										</h1>
+										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
+											<span className='font-semibold'>Putri dari</span>
+											<br /> Bapak Herry Bosscha & Ibu Ida Syadiah
+										</span>
+									</div>
+									<div className='flex flex-col items-center'>
+										<div className='relative'>
+											<Fade delay={500} duration={3000}>
+												<div
+													className='absolute z-[-1] w-[150px] h-[150px]'
+													style={{ scale: '1.3' }}
+												>
+													<img
+														src={background_image.planet_profile}
+														alt=''
+														className='relative animate-spin-slow-20s'
+													/>
+												</div>
+											</Fade>
+											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
+												<img
+													src={wedding_image.JanakaPhoto}
+													alt=''
+													className='w-full h-full object-cover'
+												/>
+											</div>
+										</div>
+										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
+											Ichwan Arif Pratama
+										</h1>
+										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
+											<span className='font-semibold'>Putra dari</span> <br />
+											Bapak Iman Ramadhan & Ibu Sri Mustikawarni
+										</span>
+									</div>
+								</div>
+							</Fade>
+							<Countdown
+								date={Date.now() + total_ms}
+								renderer={({ days, hours, minutes, seconds, completed }) => {
+									return (
+										<BaseCountdown
+											days={days}
+											hours={hours}
+											minutes={minutes}
+											seconds={seconds}
+											isCompleted={completed}
+										/>
+									)
+								}}
+							/>
+							<Fade bottom>
+								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-500 py-3 text-[#FFFFFF]'>
+									<span className='font-semibold text-xl'>
+										Gedung Graha Indah Karya
+									</span>
+									<span>
+										Jl. Golf Raya No. 2A Cisaranten Bina Harapan, <br /> Kec.
+										Arcamanik, Kota Bandung
+									</span>
+								</div>
+							</Fade>
+							<div className='relative flex md:flex-row flex-col gap-5 w-full items-center justify-center mb-5 p-3'>
+								<Fade delay={500} duration={3000}>
+									<div className='absolute brightness-50 '>
+										<img
+											src={background_image.red_planet}
+											alt=''
+											className='w-full floating-element'
+										/>
+									</div>
+								</Fade>
+								{/* <Zoom>
               <div className="h-[200px] grid col-span-4 relative md:w-[350px] w-full">
                 <div className="group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#fff]/[0.85] rounded-lg border-gray-500 border-2">
                   <p className="font-poppins mb-2 text-2xl font-bold text-[#FFFFFF] group-hover:text-gray-700">
@@ -224,7 +266,7 @@ const HomePage = () => {
                 </div>
               </div>
             </Zoom> */}
-            {/* <Zoom delay={300}>
+								{/* <Zoom delay={300}>
               <div className="h-[200px] grid col-span-4 relative md:w-[350px] w-full">
                 <div className="group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#fff]/[0.85] rounded-lg border-gray-500 border-2">
                   <p className="font-poppins mb-2 text-2xl font-bold text-[#FFFFFF] group-hover:text-gray-700">
@@ -251,52 +293,53 @@ const HomePage = () => {
                 </div>
               </div>
             </Zoom> */}
-          </div>
-          
-          {/* <Zoom delay={300}>
+							</div>
+
+							{/* <Zoom delay={300}>
             <div className="px-3 w-full">
               <MapsEmbed />
             </div>
           </Zoom> */}
-          <div className="px-5 w-full">
-            <Fade bottom>
-              <div className="flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-500 pt-5">
-                <span className="text-center font-black-hole md:text-7xl text-4xl text-[#FFFFFF]">
-                  Bismillahirrahmanirahiim
-                </span>
-                <span className="text-center font-poppins text-md font-normal max-w-2xl text-[#FFFFFF]">
-                  "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-                  pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
-                  cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-                  antaramu rasa kasih dan sayang" <br /> (Ar-Rum 30:21)
-                </span>
-              </div>
-            </Fade>
-            {/* <Zoom>
+							<div className='px-5 w-full'>
+								<Fade bottom>
+									<div className='flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-500 pt-5'>
+										<span className='text-center font-black-hole md:text-7xl text-4xl text-[#FFFFFF]'>
+											Bismillahirrahmanirahiim
+										</span>
+										<span className='text-center font-poppins text-md font-normal max-w-2xl text-[#FFFFFF]'>
+											"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+											menciptakan pasangan-pasangan untukmu dari jenismu
+											sendiri, agar kamu cenderung dan merasa tenteram
+											kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+											sayang" <br /> (Ar-Rum 30:21)
+										</span>
+									</div>
+								</Fade>
+								{/* <Zoom>
               <div className="w-full mt-5">
                 <ImageGallery />
               </div>
             </Zoom> */}
-          </div>
-          <div className="w-full mt-5 px-5">
-            <div className="flex flex-col items-center gap-y-3 border-t-2 border-gray-500 pt-5">
-              <Fade bottom>
-                <span className="text-center font-black-hole md:text-7xl text-5xl text-[#FFFFFF]">
-                  Kiriman Ucapan dan Do'a
-                </span>
-              </Fade>
-            </div>
-            {/* <Zoom>
+							</div>
+							<div className='w-full mt-5 px-5'>
+								<div className='flex flex-col items-center gap-y-3 border-t-2 border-gray-500 pt-5'>
+									<Fade bottom>
+										<span className='text-center font-black-hole md:text-7xl text-5xl text-[#FFFFFF]'>
+											Kiriman Ucapan dan Do'a
+										</span>
+									</Fade>
+								</div>
+								{/* <Zoom>
               <div className="w-full mt-5 overflow-hidden">
                 <CommentSection />
               </div>
             </Zoom> */}
-          </div>
-          {/* <GiftSection />
+							</div>
+							{/* <GiftSection />
           <Footer /> */}
-          <div className="w-full h-3"></div>
-        </div>
-      </div>
+							<div className='w-full h-3'></div>
+						</div>
+					</div>
 				</div>
 			)}
 		</div>
