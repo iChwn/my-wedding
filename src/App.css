@@ -200,3 +200,18 @@ button {
   left: -88px;
   transform: rotate(27deg) scale(-1, 1);
 }
+.floating-element {
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

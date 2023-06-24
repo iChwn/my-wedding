@@ -9,5 +9,7 @@ export { default as planet_1 } from "./planet-1.svg";
 export { default as satelit } from "./satelit.svg";
 export { default as ufo } from "./ufo.svg";
 export { default as rocket } from "./rocket.svg";
+export { default as red_planet } from "./red-planet.svg";
+export { default as planet_profile } from "./planet-profile.svg";
 
  
