@@ -1,41 +1,27 @@
-import React, {useEffect, useState} from "react";
-import PropTypes from 'prop-types';
+import React from 'react';
 
-const BaseButton = ({onClick, title, type, addClasses, icon, isDisabled}) => {
-  const [buttonType, setButtonType] = useState("")
-  
-  useEffect(() => {
-    if(type === "filled") {
-      setButtonType("px-10 py-3 bg-[#EB008B] text-white rounded-full")
-    } else if(type === "outlined") {
-      setButtonType("px-10 py-2 bg-white border-2 border-[#EB008B] text-[#EB008B] rounded-full")
-    }
-  }, [type])
+type StyledButtonProps = {
+  onClick: (data?:any) => void;
+  title?: string;
+  children?: React.ReactNode;
+  className?: string;
+  disabled?: boolean;
+}
 
+const StyledButton: React.FC<StyledButtonProps> = ({ onClick, title, children, className, disabled }) => {
   return (
-    <button disabled={isDisabled} onClick={onClick} className={`${buttonType} ${addClasses} disabled:opacity-[0.5]`}>
+    <button className={`${className}`} onClick={onClick} disabled={disabled}>
       {title}
-      {icon && (
-        <img src={icon} alt=""/>
-      )}
+      {children}
     </button>
   )
 }
 
-BaseButton.propTypes = {
-  onClick: PropTypes.func,
-  title: PropTypes.string,
-  type: PropTypes.string,
-  addClasses: PropTypes.string,
-  isDisabled: PropTypes.bool,
-};
-
-BaseButton.defaultProps = {
+StyledButton.defaultProps = {
   onClick: () => {},
-  title: "",
-  type: "filled",
-  addClasses: "",
-  isDisabled: false,
-};
+  title: '',
+  className: '',
+  disabled: false
+}
 
-export default BaseButton;
+export default StyledButton;

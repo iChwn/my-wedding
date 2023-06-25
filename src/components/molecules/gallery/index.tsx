@@ -10,18 +10,19 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "./custom.scss";
 
-
 // import required modules
+/*@ts-ignore*/
 import { FreeMode, Navigation, Thumbs } from "swiper";
-import { WeddingImage } from "assets/image";
+import { wedding_image } from "assets/image";
 
-export default function App() {
+export default function ImageGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="relative w-full rounded-md overflow-hidden md:h-auto h-[450px] md:aspect-square">
+    <div className="relative w-full rounded-md overflow-hidden md:h-auto h-[450px] md:aspect-square border-2 border-white border-dashed px-2 pt-2">
       <Swiper
         style={{
+          /*@ts-ignore*/
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
@@ -32,31 +33,31 @@ export default function App() {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto1} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto2} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto3} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto6} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto5} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto4} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto9} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto7} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto8} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -69,31 +70,31 @@ export default function App() {
         className="mySwiper pb-0"
       >
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto1} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto2} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto3} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto6} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto5} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto4} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto9} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto7} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={WeddingImage.WeddingPhoto8} />
+          <img alt="" src={wedding_image.WeddingPhoto1} />
         </SwiperSlide>
       </Swiper>
     </div>

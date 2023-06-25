@@ -17,21 +17,21 @@ const BaseCountdown = ({days, hours, minutes, seconds, isCompleted}) => {
           </div>
         </Zoom>
         <Zoom duration={1000}>
-          <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.85] rounded-lg border-white border-2 relative">
+          <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.80] rounded-lg border-white border-2 relative">
               <img src={background_image.astronot_mancing} alt='' className="w-[30px] absolute top-[-20px] right-[-8px]" />
               <div className="font-merriweather text-md">{hours}</div>
               <div className="font-merriweather uppercase text-sm mt-2 leading-none">Jam</div>
           </div>
         </Zoom>
         <Zoom duration={1500}>
-          <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.85] rounded-lg border-white border-2 relative">
+          <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.80] rounded-lg border-white border-2 relative">
               <img src={background_image.astronot_toilet} alt='' className="w-[30px] absolute top-[-20px] right-[-10px] scale-x-[-1.2] left-0" />
               <div className="font-merriweather text-md">{minutes}</div>
               <div className="font-merriweather uppercase text-sm mt-2 leading-none">Menit</div>
           </div>
         </Zoom>
         <Zoom duration={2000}>
-        <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.85] rounded-lg border-white border-2 relative">
+        <div className="md:min-w-[100px] min-w-[70px] mx-1 p-2 shadow-md text-[#FFFFFF] bg-[#0F1C4F]/[0.80] rounded-lg border-white border-2 relative">
             <img src={background_image.astronot_dadah} alt='' className="w-[30px] absolute top-[-20px] right-[-10px] floating-element5s" />
             <div className="font-merriweather text-md">{seconds}</div>
             <div className="font-merriweather uppercase text-sm mt-2 leading-none">Detik</div>

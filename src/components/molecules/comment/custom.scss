@@ -1,0 +1,14 @@
+.button-send {
+  padding: 10px 15px !important;
+  border-radius: 8px !important;
+  width: max-content;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.custom-select {
+  div {
+    border-color: rgb(156, 156, 156);
+  }
+}

@@ -3,7 +3,13 @@ import Opening from './opening'
 import { Fade, Zoom, Flip } from 'react-reveal'
 import { background_image, wedding_image } from 'assets/image'
 import Snowfall from 'react-snowfall'
-import { BaseCountdown, MapsEmbed } from 'components'
+import {
+	BaseCountdown,
+	CommentSection,
+	Footer,
+	ImageGallery,
+	MapsEmbed,
+} from 'components'
 import Countdown from 'react-countdown'
 import {
 	CalendarIcon,
@@ -13,7 +19,7 @@ import {
 import 'assets/css/custom.scss'
 
 const HomePage = () => {
-	const [content, setContent] = useState('opening')
+	const [content, setContent] = useState('main-content')
 	const snowflake1 = document.createElement('img')
 	snowflake1.src = background_image.meteor_fire
 	const transitionCallback = () => {
@@ -156,7 +162,7 @@ const HomePage = () => {
 									Pernikahan Kami :
 								</span>
 								<div className='flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-300 z-10'>
-								<div className='flex flex-col items-center'>
+									<div className='flex flex-col items-center'>
 										<div className='relative'>
 											<Fade delay={500} duration={3000}>
 												<div
@@ -255,7 +261,7 @@ const HomePage = () => {
 								</Fade>
 								<Zoom>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
-										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.85] rounded-lg border-gray-300 border-2'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.80] rounded-lg border-gray-300 border-2'>
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Akad Nikah
 											</p>
@@ -286,7 +292,7 @@ const HomePage = () => {
 								</Zoom>
 								<Zoom delay={300}>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
-										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.85] rounded-lg border-gray-300 border-2'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.80] rounded-lg border-gray-300 border-2'>
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Resepsi Nikah
 											</p>
@@ -339,11 +345,11 @@ const HomePage = () => {
 										</span>
 									</div>
 								</Fade>
-								{/* <Zoom>
-              <div className="w-full mt-5">
-                <ImageGallery />
-              </div>
-            </Zoom> */}
+								<Zoom>
+									<div className='w-full mt-5'>
+										<ImageGallery />
+									</div>
+								</Zoom>
 							</div>
 							<div className='w-full mt-5 px-5'>
 								<div className='flex flex-col items-center gap-y-3 border-t-2 border-gray-300 pt-5'>
@@ -353,14 +359,14 @@ const HomePage = () => {
 										</span>
 									</Fade>
 								</div>
-								{/* <Zoom>
-              <div className="w-full mt-5 overflow-hidden">
-                <CommentSection />
-              </div>
-            </Zoom> */}
+								<Zoom>
+									<div className='w-full mt-5 overflow-hidden'>
+										<CommentSection />
+									</div>
+								</Zoom>
 							</div>
-							{/* <GiftSection />
-          <Footer /> */}
+							{/* <GiftSection /> */}
+          		<Footer />
 							<div className='w-full h-3'></div>
 						</div>
 					</div>

@@ -9,7 +9,7 @@ const MapsEmbed = () => {
         height="450"
         frameBorder="0"
         aria-hidden="false"
-        tabIndex="0"
+        tabIndex={0}
       >
         Your browser does not support iframe
       </iframe>
