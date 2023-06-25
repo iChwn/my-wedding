@@ -17,6 +17,7 @@ import {
 	LocationMarkerIcon,
 } from '@heroicons/react/solid'
 import 'assets/css/custom.scss'
+import ShootingStar from 'components/atoms/shootingStars'
 
 const HomePage = () => {
 	const [content, setContent] = useState('main-content')
@@ -41,7 +42,7 @@ const HomePage = () => {
 					}`}
 				>
 					<div className='h-screen w-full flex items-center justify-center flex-col relative'>
-						<div className='absolute top-0 w-full h-full z-10'>
+						<div className='absolute top-0 w-full h-full z-10 overflow-hidden'>
 							{/* <Snowfall
 								color='white'
 								changeFrequency={0}
@@ -49,30 +50,7 @@ const HomePage = () => {
 								radius={[1, 2]}
 								wind={[0, 0]}
 							/> */}
-
-
-<div className="night">
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-  <div className="shooting_star"></div>
-</div>
+							<ShootingStar />
 						</div>
 						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden gap-3'>
 							<Fade top delay={1000} duration={1500} opa>
