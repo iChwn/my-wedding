@@ -19,7 +19,7 @@ import {
 import 'assets/css/custom.scss'
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
+	const [content, setContent] = useState('opening')
 	const snowflake1 = document.createElement('img')
 	snowflake1.src = background_image.meteor_fire
 	const transitionCallback = () => {
