@@ -16,5 +16,6 @@ export { default as astronot_flag } from "./astronot-flag.svg";
 export { default as astronot_mancing } from "./astronot-mancing.svg";
 export { default as astronot_toilet } from "./astronot-toilet.svg";
 export { default as astronot_dadah } from "./astronot-dadah.svg";
+export { default as spaceship } from "./spaceship.svg";
 
  

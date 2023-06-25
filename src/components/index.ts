@@ -13,6 +13,7 @@ import SimpleAside from "./molecules/sidebar/simple-aside";
 import SimpleNavbar from "./molecules/navbar/simple-navbar";
 import SimpleTemplate from "./organism/templates/simple-sidebar-nav";
 import BaseCountdown from "./molecules/countdown";
+import MapsEmbed from "./atoms/maps";
 // Organism
 
 export { 
@@ -25,5 +26,6 @@ export {
   SimpleNavbar,
   SimpleTemplate,
   StyledButton,
-  BaseCountdown
+  BaseCountdown,
+  MapsEmbed
 };

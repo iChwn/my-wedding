@@ -1,14 +1,19 @@
 import { useState } from 'react'
 import Opening from './opening'
 import { Fade, Zoom, Flip } from 'react-reveal'
-import 'assets/css/custom.scss'
 import { background_image, wedding_image } from 'assets/image'
 import Snowfall from 'react-snowfall'
-import { BaseCountdown } from 'components'
+import { BaseCountdown, MapsEmbed } from 'components'
 import Countdown from 'react-countdown'
+import {
+	CalendarIcon,
+	ClockIcon,
+	LocationMarkerIcon,
+} from '@heroicons/react/solid'
+import 'assets/css/custom.scss'
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
+	const [content, setContent] = useState('opening')
 	const snowflake1 = document.createElement('img')
 	snowflake1.src = background_image.meteor_fire
 	const transitionCallback = () => {
@@ -16,9 +21,9 @@ const HomePage = () => {
 		console.log('transitionCallback')
 	}
 	var current_date = Date.now()
-  var finish_date = new Date('2023-07-25T00:20:00')
+	var finish_date = new Date('2023-07-25T00:20:00')
 
-  var total_ms = finish_date.getTime() - current_date;
+	var total_ms = finish_date.getTime() - current_date
 
 	return (
 		<div className='h-full w-full flex items-center justify-center flex-col'>
@@ -97,6 +102,11 @@ const HomePage = () => {
 														alt=''
 														className='md:w-[30px] w-[15px] absolute bottom-[40px] right-[40px] rotate-180'
 													/>
+													<img
+														src={background_image.spaceship}
+														alt=''
+														className='md:w-[30px] w-[15px] absolute top-[40px] left-[40px] rotate-[50deg]'
+													/>
 												</div>
 												<Zoom duration={1000}>
 													<div className='p-4 rounded-full border-white bg-[#a71d5d7c] relative'>
@@ -145,7 +155,37 @@ const HomePage = () => {
 									Memohon Do'a Restu Serta Mengundang Bapak/Ibu/Saudara/I Pada
 									Pernikahan Kami :
 								</span>
-								<div className='flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-500 z-10'>
+								<div className='flex md:flex-row gap-10 flex-col mt-4 pb-4 border-b-2 border-gray-300 z-10'>
+								<div className='flex flex-col items-center'>
+										<div className='relative'>
+											<Fade delay={500} duration={3000}>
+												<div
+													className='absolute z-[-1] w-[150px] h-[150px]'
+													style={{ scale: '1.3' }}
+												>
+													<img
+														src={background_image.planet_profile}
+														alt=''
+														className='relative animate-spin-slow-20s'
+													/>
+												</div>
+											</Fade>
+											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
+												<img
+													src={wedding_image.JanakaPhoto}
+													alt=''
+													className='w-full h-full object-cover'
+												/>
+											</div>
+										</div>
+										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
+											Ichwan Arif Pratama
+										</h1>
+										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
+											<span className='font-semibold'>Putra dari</span> <br />
+											Bapak Iman Ramadhan & Ibu Sri Mustikawarni
+										</span>
+									</div>
 									<div className='flex flex-col items-center'>
 										<div className='relative'>
 											<Fade delay={500} duration={3000}>
@@ -176,36 +216,6 @@ const HomePage = () => {
 											<br /> Bapak Herry Bosscha & Ibu Ida Syadiah
 										</span>
 									</div>
-									<div className='flex flex-col items-center'>
-										<div className='relative'>
-											<Fade delay={500} duration={3000}>
-												<div
-													className='absolute z-[-1] w-[150px] h-[150px]'
-													style={{ scale: '1.3' }}
-												>
-													<img
-														src={background_image.planet_profile}
-														alt=''
-														className='relative animate-spin-slow-20s'
-													/>
-												</div>
-											</Fade>
-											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
-												<img
-													src={wedding_image.JanakaPhoto}
-													alt=''
-													className='w-full h-full object-cover'
-												/>
-											</div>
-										</div>
-										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
-											Ichwan Arif Pratama
-										</h1>
-										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
-											<span className='font-semibold'>Putra dari</span> <br />
-											Bapak Iman Ramadhan & Ibu Sri Mustikawarni
-										</span>
-									</div>
 								</div>
 							</Fade>
 							<Countdown
@@ -223,7 +233,7 @@ const HomePage = () => {
 								}}
 							/>
 							<Fade bottom>
-								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-500 py-3 text-[#FFFFFF]'>
+								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF]'>
 									<span className='font-semibold text-xl'>
 										Gedung Graha Indah Karya
 									</span>
@@ -243,66 +253,80 @@ const HomePage = () => {
 										/>
 									</div>
 								</Fade>
-								{/* <Zoom>
-              <div className="h-[200px] grid col-span-4 relative md:w-[350px] w-full">
-                <div className="group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#fff]/[0.85] rounded-lg border-gray-500 border-2">
-                  <p className="font-poppins mb-2 text-2xl font-bold text-[#FFFFFF] group-hover:text-gray-700">
-                    Akad Nikah
-                  </p>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <CalendarIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] text-[#566261]">Ahad, 24 Juli 2022</span>
-                  </div>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <ClockIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] text-[#566261]">08.00 Wib</span>
-                  </div>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <LocationMarkerIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] font-semibold text-[#566261]">
-                      Gedung Graha Indah Karya
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Zoom> */}
-								{/* <Zoom delay={300}>
-              <div className="h-[200px] grid col-span-4 relative md:w-[350px] w-full">
-                <div className="group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#fff]/[0.85] rounded-lg border-gray-500 border-2">
-                  <p className="font-poppins mb-2 text-2xl font-bold text-[#FFFFFF] group-hover:text-gray-700">
-                    Resepsi Nikah
-                  </p>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <CalendarIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] text-[#566261]">Ahad, 24 Juli 2022</span>
-                  </div>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <ClockIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] text-[#566261]">
-                      Sesi 1: 11.00 Wib - 12.30 Wib
-                      <br />
-                      Sesi 2: 12.30 Wib - 14.00 Wib
-                    </span>
-                  </div>
-                  <div className="flex flex-row items-center font-poppins mb-2">
-                    <LocationMarkerIcon width={20} height={20} color="#566261" />
-                    <span className="ml-2 mt-[1px] font-semibold text-[#566261]">
-                      Gedung Graha Indah Karya
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Zoom> */}
+								<Zoom>
+									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.85] rounded-lg border-gray-300 border-2'>
+											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
+												Akad Nikah
+											</p>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<CalendarIcon width={20} height={20} color='#FFFFFF' />
+												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
+													Ahad, 24 Juli 2022
+												</span>
+											</div>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<ClockIcon width={20} height={20} color='#FFFFFF' />
+												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
+													08.00 Wib
+												</span>
+											</div>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<LocationMarkerIcon
+													width={20}
+													height={20}
+													color='#FFFFFF'
+												/>
+												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
+													Gedung Graha Indah Karya
+												</span>
+											</div>
+										</div>
+									</div>
+								</Zoom>
+								<Zoom delay={300}>
+									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.85] rounded-lg border-gray-300 border-2'>
+											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
+												Resepsi Nikah
+											</p>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<CalendarIcon width={20} height={20} color='#FFFFFF' />
+												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
+													Ahad, 24 Juli 2022
+												</span>
+											</div>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<ClockIcon width={20} height={20} color='#FFFFFF' />
+												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
+													Sesi 1: 11.00 Wib - 12.30 Wib
+													<br />
+													Sesi 2: 12.30 Wib - 14.00 Wib
+												</span>
+											</div>
+											<div className='flex flex-row items-center font-poppins mb-2'>
+												<LocationMarkerIcon
+													width={20}
+													height={20}
+													color='#FFFFFF'
+												/>
+												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
+													Gedung Graha Indah Karya
+												</span>
+											</div>
+										</div>
+									</div>
+								</Zoom>
 							</div>
 
-							{/* <Zoom delay={300}>
-            <div className="px-3 w-full">
-              <MapsEmbed />
-            </div>
-          </Zoom> */}
+							<Zoom delay={300}>
+								<div className='px-3 w-full'>
+									<MapsEmbed />
+								</div>
+							</Zoom>
 							<div className='px-5 w-full'>
 								<Fade bottom>
-									<div className='flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-500 pt-5'>
+									<div className='flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-300 pt-5'>
 										<span className='text-center font-black-hole md:text-7xl text-4xl text-[#FFFFFF]'>
 											Bismillahirrahmanirahiim
 										</span>
@@ -322,7 +346,7 @@ const HomePage = () => {
             </Zoom> */}
 							</div>
 							<div className='w-full mt-5 px-5'>
-								<div className='flex flex-col items-center gap-y-3 border-t-2 border-gray-500 pt-5'>
+								<div className='flex flex-col items-center gap-y-3 border-t-2 border-gray-300 pt-5'>
 									<Fade bottom>
 										<span className='text-center font-black-hole md:text-7xl text-5xl text-[#FFFFFF]'>
 											Kiriman Ucapan dan Do'a
