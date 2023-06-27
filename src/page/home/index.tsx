@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/solid'
 import 'assets/css/custom.scss'
 import ShootingStar from 'components/atoms/shootingStars'
+import Charity from 'components/molecules/gift'
 
 const HomePage = () => {
 	const [content, setContent] = useState('opening')
@@ -363,6 +364,7 @@ const HomePage = () => {
 									</div>
 								</Zoom>
 							</div>
+							<Charity />
 							{/* <GiftSection /> */}
           		<Footer />
 							<div className='w-full h-3'></div>
