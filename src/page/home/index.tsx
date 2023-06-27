@@ -358,7 +358,7 @@ const HomePage = () => {
 									</Fade>
 								</div>
 								<Zoom>
-									<div className='w-full mt-5 overflow-hidden'>
+									<div className='w-full mt-5'>
 										<CommentSection />
 									</div>
 								</Zoom>

@@ -6,6 +6,8 @@ import {
 } from '@heroicons/react/solid'
 import "./custom.scss";
 import BaseButton from "components/atoms/button/basicButton";
+import LottiePlayer from "components/atoms/lottie";
+import { lottie } from "assets/image";
 
 const options = [
   { value: "YES", label: "Hadir" },
@@ -16,7 +18,15 @@ const options = [
 const CommentSection = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([
+    {
+      id: 1,
+      name: "Ichwan Arif Pratama",
+      comment: "lorem ipsum dolor sit amet",
+      attend: "YES",
+      date: "2021-09-01 12:30",
+    },
+  ]);
   const [attend, setAttend] = useState("YES");
   const [attendSelect, setAttendSelect] = useState(options[0]);
   const [loadingLoadComment, setLoadingLoadComment] = useState(false);
@@ -26,15 +36,15 @@ const CommentSection = () => {
     e.preventDefault();
     setLoadingSubmitComment(true);
   };
-  const countHadir =
-    comments.filter((e) => e.data.attend === "YES").length || 0;
-  const countTidakHadir =
-    comments.filter((e) => e.data.attend === "NO").length || 0;
-  const countRagu =
-    comments.filter((e) => e.data.attend === "MAYBE").length || 0;
+  const countHadir = comments.filter((e) => e.attend === "YES").length || 0;
+  const countTidakHadir = comments.filter((e) => e.attend === "NO").length || 0;
+  const countRagu = comments.filter((e) => e.attend === "MAYBE").length || 0;
 
   return (
-    <div className="flex flex-col items-center justify-center w-full p-3 bg-[#0F1C4F]/[0.80] rounded-lg border-gray-300 border-2">
+    <div className="flex flex-col items-center justify-center w-full p-3 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2 relative">
+      <div className="absolute top-[-85px] right-[-30px] w-[200px]">
+        <LottiePlayer lottieFile={lottie.Peek} />
+      </div>
       <form className="w-full" onSubmit={submit}>
         <div className="flex flex-wrap mb-6 w-full">
           <div className="w-full flex pt-4 flex-col items-center mb-4 pb-6 border-b-[1px] border-gray-300">
@@ -93,8 +103,8 @@ const CommentSection = () => {
           </div>
         </div>
       </form>
-      <div className="antialiased px-3 mb-8 w-full">
-        <h3 className="mb-4 text-lg font-semibold text-[#272A33] font-poppins">
+      <div className="antialiased px-3 w-full">
+        <h3 className="mb-4 text-lg font-semibold text-[#FFFFFF] font-poppins">
           Ucapan dan Do'a
         </h3>
 
@@ -105,18 +115,21 @@ const CommentSection = () => {
           {comments.map((item) => {
             return (
               <div key={item.id} className="flex">
-                <div className="flex-1 align-sp border border-gray-500 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed text-[#272A33] font-poppins">
-                  <strong>{item.data.name}</strong>
+                <div className="flex-1 align-sp border border-gray-500 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed text-[#FFFFFF] font-poppins">
+                  <strong>{item.name}</strong>
                   <br />
                   <span className="text-xs text-gray-400">
-                    10-05-2000 12:20
+                    {item.date}
                   </span>
-                  <p className="text-sm mt-2">{item.data.comment}</p>
+                  <p className="text-sm mt-2">{item.comment}</p>
                 </div>
               </div>
             );
           })}
         </div>
+      </div>
+      <div className="absolute bottom-0 h-[300px] z-[-1]">
+        <LottiePlayer lottieFile={lottie.RocketIdle} />
       </div>
     </div>
   );
