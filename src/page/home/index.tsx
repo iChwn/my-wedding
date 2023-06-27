@@ -2,12 +2,12 @@ import { useState } from 'react'
 import Opening from './opening'
 import { Fade, Zoom, Flip } from 'react-reveal'
 import { background_image, wedding_image } from 'assets/image'
-import Snowfall from 'react-snowfall'
 import {
 	BaseCountdown,
 	CommentSection,
 	Footer,
 	ImageGallery,
+	LottiePlayer,
 	MapsEmbed,
 } from 'components'
 import Countdown from 'react-countdown'
@@ -20,9 +20,7 @@ import 'assets/css/custom.scss'
 import ShootingStar from 'components/atoms/shootingStars'
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
-	const snowflake1 = document.createElement('img')
-	snowflake1.src = background_image.meteor_fire
+	const [content, setContent] = useState('opening')
 	const transitionCallback = () => {
 		setContent('main-content')
 		console.log('transitionCallback')
@@ -43,13 +41,6 @@ const HomePage = () => {
 				>
 					<div className='h-screen w-full flex items-center justify-center flex-col relative'>
 						<div className='absolute top-0 w-full h-full z-10 overflow-hidden'>
-							{/* <Snowfall
-								color='white'
-								changeFrequency={0}
-								snowflakeCount={100}
-								radius={[1, 2]}
-								wind={[0, 0]}
-							/> */}
 							<ShootingStar />
 						</div>
 						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden gap-3'>
@@ -254,11 +245,7 @@ const HomePage = () => {
 							<div className='relative flex md:flex-row flex-col gap-5 w-full items-center justify-center mb-5 p-3'>
 								<Fade delay={500} duration={3000}>
 									<div className='absolute brightness-50 '>
-										<img
-											src={background_image.red_planet}
-											alt=''
-											className='w-full floating-element'
-										/>
+										<LottiePlayer />
 									</div>
 								</Fade>
 								<Zoom>

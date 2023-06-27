@@ -5,7 +5,7 @@ import InputForm from "./molecules/form/form";
 import BaseButton from "./atoms/button/basicButton";
 import FormAlert from "./atoms/alert/formAlert";
 import StyledButton from "./atoms/button/styledButton";
-
+import LottiePlayer from "./atoms/lottie";
 
 // Molecules
 import SidebarComponent from "./molecules/sidebar";
@@ -33,5 +33,6 @@ export {
   MapsEmbed,
   ImageGallery,
   CommentSection,
-  Footer
+  Footer,
+  LottiePlayer
 };
