@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Opening from './opening'
 import { Fade, Zoom, Flip } from 'react-reveal'
-import { background_image, wedding_image } from 'assets/image'
+import { background_image, lottie, wedding_image } from 'assets/image'
 import {
 	BaseCountdown,
 	CommentSection,
@@ -143,7 +143,7 @@ const HomePage = () => {
 							</Fade> */}
 						</div>
 					</div>
-					<div className='w-full flex items-center justify-center flex-col relative'>
+					<div className='w-full flex items-center justify-center flex-col relative overflow-hidden'>
 						<div className='max-w-5xl w-full flex flex-col items-center gap-y-3'>
 							<Fade bottom>
 								<span className='text-center font-poppins text-md font-normal px-5 text-[#FFFFFF]'>
@@ -232,7 +232,7 @@ const HomePage = () => {
 								}}
 							/>
 							<Fade bottom>
-								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF]'>
+								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF] overflow-hidden'>
 									<span className='font-semibold text-xl'>
 										Gedung Graha Indah Karya
 									</span>
@@ -244,13 +244,16 @@ const HomePage = () => {
 							</Fade>
 							<div className='relative flex md:flex-row flex-col gap-5 w-full items-center justify-center mb-5 p-3'>
 								<Fade delay={500} duration={3000}>
-									<div className='absolute brightness-50 '>
-										<LottiePlayer />
+									<div className='absolute brightness-50'>
+										<LottiePlayer lottieFile={lottie.SolarOptimize}/>
 									</div>
 								</Fade>
 								<Zoom>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
-										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.80] rounded-lg border-gray-300 border-2'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2 relative'>
+											<div className='absolute w-[150px] right-[-10px] top-[-30px]'>
+												<LottiePlayer lottieFile={lottie.Ufo}/>
+											</div>
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Akad Nikah
 											</p>
@@ -281,7 +284,10 @@ const HomePage = () => {
 								</Zoom>
 								<Zoom delay={300}>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
-										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 bg-[#0F1C4F]/[0.80] rounded-lg border-gray-300 border-2'>
+										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2'>
+											<div className='absolute w-[150px] right-[-30px] top-[-30px]'>
+												<LottiePlayer lottieFile={lottie.BlackHole}/>
+											</div>
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Resepsi Nikah
 											</p>
@@ -321,7 +327,10 @@ const HomePage = () => {
 							</Zoom>
 							<div className='px-5 w-full'>
 								<Fade bottom>
-									<div className='flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-300 pt-5'>
+									<div className='flex flex-col items-center gap-y-3 mt-5 border-t-2 border-gray-300 pt-5 relative'>
+										<div className='absolute md:w-[300px] w-[400px] top-[-40px] z-[-1] brightness-50'>
+											<LottiePlayer lottieFile={lottie.LovePlanet}/>
+										</div>
 										<span className='text-center font-black-hole md:text-7xl text-4xl text-[#FFFFFF]'>
 											Bismillahirrahmanirahiim
 										</span>
