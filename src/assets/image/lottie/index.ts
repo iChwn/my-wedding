@@ -8,3 +8,4 @@ export { default as RocketOrbit } from "./rocket-orbit.lottie";
 export { default as RocketIdle } from "./rocket-idle.lottie";
 export { default as GiftAstronaut } from "./gift-astronout.lottie";
 export { default as BlackHoleSpin } from "./black-hole-spin.lottie";
+export { default as LoadingPlane } from "./loading-plane.lottie";

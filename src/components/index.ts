@@ -7,6 +7,7 @@ import FormAlert from "./atoms/alert/formAlert";
 import StyledButton from "./atoms/button/styledButton";
 import LottiePlayer from "./atoms/lottie";
 import AudioMusic from "./atoms/audio";
+import PreLoading from "./atoms/loading";
 
 // Molecules
 import SidebarComponent from "./molecules/sidebar";
@@ -36,5 +37,6 @@ export {
   CommentSection,
   Footer,
   LottiePlayer,
-  AudioMusic
+  AudioMusic,
+  PreLoading
 };
