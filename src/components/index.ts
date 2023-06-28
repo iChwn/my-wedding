@@ -6,6 +6,7 @@ import BaseButton from "./atoms/button/basicButton";
 import FormAlert from "./atoms/alert/formAlert";
 import StyledButton from "./atoms/button/styledButton";
 import LottiePlayer from "./atoms/lottie";
+import AudioMusic from "./atoms/audio";
 
 // Molecules
 import SidebarComponent from "./molecules/sidebar";
@@ -34,5 +35,6 @@ export {
   ImageGallery,
   CommentSection,
   Footer,
-  LottiePlayer
+  LottiePlayer,
+  AudioMusic
 };

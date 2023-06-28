@@ -3,6 +3,7 @@ import Opening from './opening'
 import { Fade, Zoom, Flip } from 'react-reveal'
 import { background_image, lottie, wedding_image } from 'assets/image'
 import {
+	AudioMusic,
 	BaseCountdown,
 	CommentSection,
 	Footer,
@@ -22,9 +23,10 @@ import Charity from 'components/molecules/gift'
 
 const HomePage = () => {
 	const [content, setContent] = useState('opening')
+	const [isAudioPlay, setAudioPlay] = useState(false)
 	const transitionCallback = () => {
+		setAudioPlay(true)
 		setContent('main-content')
-		console.log('transitionCallback')
 	}
 	var current_date = Date.now()
 	var finish_date = new Date('2023-07-25T00:20:00')
@@ -40,12 +42,13 @@ const HomePage = () => {
 						content === 'main-content' ? 'block' : 'hidden'
 					}`}
 				>
+					<AudioMusic isPlay={isAudioPlay} />
 					<div className='h-screen w-full flex items-center justify-center flex-col relative'>
 						<div className='absolute top-0 w-full h-full z-10 overflow-hidden'>
 							<ShootingStar />
 						</div>
 						<div className='max-w-5xl h-full w-full flex flex-col items-center justify-center overflow-hidden gap-3'>
-							<Fade top delay={1000} duration={1500} opa>
+							<Fade top delay={1000} duration={1500}>
 								<h1 className='font-black-hole md:text-7xl text-6xl text-[#FFFFFF] text-center'>
 									Undangan Pernikahan
 								</h1>
@@ -347,8 +350,32 @@ const HomePage = () => {
 								<Zoom>
 									<div className='w-full mt-5'>
 										<ImageGallery />
+										<ol className="relative border-l border-gray-200 mt-5">
+											<div className='absolute w-full z-[-1] opacity-50'>
+												<LottiePlayer lottieFile={lottie.BlackHoleSpin} />
+											</div>                  
+											<li className="mb-10 ml-4">
+													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Februari 2018</time>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kita bertemu secara online di Facebook grup vvibu</h3>
+													<p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Kita hanya saling bertukar username instagram saja dan hanya cukup saling tau tidak pernah berbincang antara satu sama lain.</p>
+											</li>
+											<li className="mb-10 ml-4">
+													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+													<time className="mb-1 text-sm font-normal leading-none text-gray-400">March 2020</time>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kita saling mengenal dan berbincang</h3>
+													<p className="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+											</li>
+											<li className="ml-4">
+													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+													<time className="mb-1 text-sm font-normal leading-none text-gray-400">April 2022</time>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>
+													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
+											</li>
+									</ol>
 									</div>
 								</Zoom>
+								
 							</div>
 							<div className='w-full mt-5 px-5'>
 								<div className='flex flex-col items-center gap-y-3 border-t-2 border-gray-300 pt-5'>
