@@ -1,5 +1,6 @@
 import { lottie } from "assets/image"
-import LottiePlayer from "../lottie"
+import { lazy } from "react"
+const LottiePlayer = lazy(() => import('./../lottie'))
 
 const Loading = () => {
 	return (

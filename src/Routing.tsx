@@ -4,9 +4,7 @@ import { routeUrl } from "constant";
 import Invitation from "page/home/invitation";
 import { PreLoading } from "components";
 
-const AuthPage = React.lazy(() => import("page/authentication"))
 const HomePage = React.lazy(() => import("page/home"))
-const SampleFormPage = React.lazy(() => import("page/sampleForm"))
 
 const Router = () => {
   return (
@@ -14,8 +12,6 @@ const Router = () => {
       <Routes>
         {/* <Route path="/" element={<Navigate to={routeUrl.home} replace />} /> */}
         <Route path={routeUrl.home} element={<HomePage/>} />
-        <Route path={routeUrl.authentication} element={<AuthPage/>} />
-        <Route path={routeUrl.sampleForm} element={<SampleFormPage/>} />
         <Route path={routeUrl.invitation} element={<Invitation/>} />
       </Routes>
     </Suspense>

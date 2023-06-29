@@ -1,7 +1,7 @@
-import { background_image, lottie } from "assets/image";
+import { lottie } from "assets/image";
+import { lazy } from "react";
 import { Fade, Zoom } from 'react-reveal'
-import StyledButton from "components/atoms/button/basicButton";
-import LottiePlayer from "components/atoms/lottie";
+const LottiePlayer = lazy(() => import('components/atoms/lottie'))
  
 const Charity = () => {
   return (

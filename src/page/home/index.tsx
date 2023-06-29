@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import Opening from './opening'
+import { lazy, useState } from 'react'
 import { Fade, Zoom, Flip } from 'react-reveal'
 import { background_image, lottie, wedding_image } from 'assets/image'
 import {
@@ -11,19 +10,24 @@ import {
 	LottiePlayer,
 	MapsEmbed,
 } from 'components'
-import Countdown from 'react-countdown'
 import {
 	CalendarIcon,
 	ClockIcon,
 	LocationMarkerIcon,
 } from '@heroicons/react/solid'
 import 'assets/css/custom.scss'
-import ShootingStar from 'components/atoms/shootingStars'
-import Charity from 'components/molecules/gift'
+import { useMediaQuery } from 'utility/helper'
+
+const Opening = lazy(() => import('./opening'))
+const Countdown = lazy(() => import('react-countdown'))
+const ShootingStar = lazy(() => import('components/atoms/shootingStars'))
+const Charity = lazy(() => import('components/molecules/gift'))
 
 const HomePage = () => {
-	const [content, setContent] = useState('opening')
+	const [content, setContent] = useState('main-content')
 	const [isAudioPlay, setAudioPlay] = useState(false)
+  const smQuery = useMediaQuery("only screen and (min-width: 700px)");
+
 	const transitionCallback = () => {
 		setAudioPlay(true)
 		setContent('main-content')
@@ -54,30 +58,6 @@ const HomePage = () => {
 								</h1>
 							</Fade>
 							<div className='relative'>
-								{/* <Zoom delay={500}>
-									<div className='relative'>
-										<img
-											src={background_image.Tree2}
-											alt=''
-											className='img-accent-1 md:block hidden'
-										/>
-										<img
-											src={background_image.Tree2}
-											alt=''
-											className='img-accent-1-mobile md:hidden block'
-										/>
-										<img
-											src={background_image.Tree2}
-											alt=''
-											className='img-accent-2 md:block hidden'
-										/>
-										<img
-											src={background_image.Tree2}
-											alt=''
-											className='img-accent-2-mobile md:hidden block'
-										/>
-									</div>
-								</Zoom> */}
 								<Zoom duration={1000}>
 									<div className='p-4 rounded-full border-white relative bg-[#0F1C4F]'>
 										<div className='w-full h-full rounded-full absolute top-0 left-0 animate-spin-slow-20s md:p-[30px] p-[20px]'>
@@ -255,9 +235,11 @@ const HomePage = () => {
 								<Zoom>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
 										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2 relative'>
-											<div className='absolute w-[150px] right-[-10px] top-[-30px]'>
-												<LottiePlayer lottieFile={lottie.Ufo}/>
-											</div>
+											{smQuery && (
+												<div className='absolute w-[150px] right-[-10px] top-[-30px]'>
+													<LottiePlayer lottieFile={lottie.Ufo}/>
+												</div>
+											)}
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Akad Nikah
 											</p>
@@ -289,9 +271,11 @@ const HomePage = () => {
 								<Zoom delay={300}>
 									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
 										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2'>
-											<div className='absolute w-[150px] right-[-30px] top-[-30px]'>
-												<LottiePlayer lottieFile={lottie.BlackHole}/>
-											</div>
+											{smQuery && (
+												<div className='absolute w-[150px] right-[-30px] top-[-30px]'>
+													<LottiePlayer lottieFile={lottie.BlackHole}/>
+												</div>
+											)}
 											<p className='font-poppins mb-2 text-2xl font-bold text-[#FFFFFF]'>
 												Resepsi Nikah
 											</p>
@@ -351,9 +335,11 @@ const HomePage = () => {
 									<div className='w-full mt-5'>
 										<ImageGallery />
 										<ol className="relative border-l border-gray-200 mt-5">
-											<div className='absolute w-full z-[-1] opacity-50'>
-												<LottiePlayer lottieFile={lottie.BlackHoleSpin} />
-											</div>                  
+											{smQuery && (
+												<div className='absolute w-full z-[-1] opacity-50'>
+													<LottiePlayer lottieFile={lottie.BlackHoleSpin} />
+												</div>                  
+											)}
 											<li className="mb-10 ml-4">
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
 													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Februari 2018</time>

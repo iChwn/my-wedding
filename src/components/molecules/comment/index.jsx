@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import Select from "react-select";
-import {
-	CalendarIcon,
-} from '@heroicons/react/solid'
 import "./custom.scss";
-import BaseButton from "components/atoms/button/basicButton";
 import LottiePlayer from "components/atoms/lottie";
 import { lottie } from "assets/image";
+import StyledButton from "components/atoms/button/styledButton";
 
 const options = [
   { value: "YES", label: "Hadir" },
@@ -99,7 +95,7 @@ const CommentSection = () => {
             />
           </div>
           <div className="w-full md:w-full flex justify-end px-3">
-            <BaseButton className='bg-red-500 rounded-md px-5 py-2 text-white text-md h-fit disabled:bg-gray-500' title="Simpan" onClick={() => console.log("wkwkwkw")} disabled={loadingSubmitComment} />
+            <StyledButton className='bg-red-500 rounded-md px-5 py-2 text-white text-md h-fit disabled:bg-gray-500' title="Simpan" onClick={() => console.log("wkwkwkw")} disabled={loadingSubmitComment} />
           </div>
         </div>
       </form>
