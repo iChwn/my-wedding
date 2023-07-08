@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
-import "./custom.scss";
 import LottiePlayer from "components/atoms/lottie";
 import { lottie } from "assets/image";
 import StyledButton from "components/atoms/button/styledButton";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  serverTimestamp,
+  query,
+  orderBy,
+} from "firebase/firestore";
+import { db } from "lib/firebaseInit";
+import "./custom.scss";
+import dayjs from "dayjs";
+import { random } from "lodash";
 
 const options = [
-  { value: "YES", label: "Hadir" },
-  { value: "NO", label: "Tidak hadir" },
-  { value: "MAYBE", label: "Masih ragu" },
+  { value: "YES", label: "Hadir", emoji: "🎉" },
+  { value: "NO", label: "Tidak hadir", emoji: "😢" },
+  { value: "MAYBE", label: "Masih ragu", emoji: "🤔" },
 ];
 
 const CommentSection = () => {
@@ -16,7 +27,7 @@ const CommentSection = () => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
-      id: 1,
+      userId: 1,
       name: "Ichwan Arif Pratama",
       comment: "lorem ipsum dolor sit amet",
       attend: "YES",
@@ -28,13 +39,53 @@ const CommentSection = () => {
   const [loadingLoadComment, setLoadingLoadComment] = useState(false);
   const [loadingSubmitComment, setLoadingSubmitComment] = useState(false);
 
+  const getComments = async () => {
+    setLoadingLoadComment(true);
+    try {
+      const commentCollectionRef = collection(db, "user-saying");
+      const response = await getDocs(
+        query(commentCollectionRef, orderBy("date", "desc"))
+      );
+      const message = response.docs.map((item) => item.data());
+      setComments(message);
+    } catch (error) {
+      console.log({ error });
+    }
+    setLoadingLoadComment(false);
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     setLoadingSubmitComment(true);
+    try {
+      const commentCollectionRef = collection(db, "user-saying");
+      await addDoc(commentCollectionRef, {
+        userId: random(1, 1000),
+        name,
+        comment,
+        attend,
+        date: serverTimestamp(),
+      });
+      setName("");
+      setComment("");
+      setAttend("YES");
+      setAttendSelect(options[0]);
+      getComments();
+    } catch (error) {
+      console.log({ error });
+    }
+    setLoadingSubmitComment(false);
   };
+ 
   const countHadir = comments.filter((e) => e.attend === "YES").length || 0;
   const countTidakHadir = comments.filter((e) => e.attend === "NO").length || 0;
   const countRagu = comments.filter((e) => e.attend === "MAYBE").length || 0;
+
+  useEffect(() => {
+    getComments();
+  }, []);
+
+  const validate = name !== "" && comment !== "";
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-3 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2 relative">
@@ -95,7 +146,7 @@ const CommentSection = () => {
             />
           </div>
           <div className="w-full md:w-full flex justify-end px-3">
-            <StyledButton className='bg-red-500 rounded-md px-5 py-2 text-white text-md h-fit disabled:bg-gray-500' title="Simpan" onClick={() => console.log("wkwkwkw")} disabled={loadingSubmitComment} />
+            <StyledButton className='bg-green-500 rounded-md px-5 py-2 text-white text-md h-fit disabled:bg-gray-500 w-[200px]' title="Kirim 🚀" onClick={submit} disabled={!validate || loadingSubmitComment} />
           </div>
         </div>
       </form>
@@ -108,14 +159,14 @@ const CommentSection = () => {
           {loadingLoadComment && (
             'loading'
           )}
-          {comments.map((item) => {
+          {comments.map((item, index) => {
             return (
-              <div key={item.id} className="flex">
-                <div className="flex-1 align-sp border border-gray-500 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed text-[#FFFFFF] font-poppins">
-                  <strong>{item.name}</strong>
+              <div key={item.userId} className="flex">
+                <div className="flex-1 align-sp border md:bg-transparent bg-[#551E63]/[0.30] border-gray-500 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed text-[#FFFFFF] font-poppins">
+                  <strong className={`${index+1 === comments.length && 'text-[#FFD700] animate-pulse'}`}>{index+1 === comments.length && "[The First 👑]"} {item.name} - {options.find(e => e.value === item.attend).label} {options.find(e => e.value === item.attend).emoji}</strong>
                   <br />
                   <span className="text-xs text-gray-400">
-                    {item.date}
+                    {dayjs(item.date?.seconds * 1000).format("DD MMMM YYYY HH:mm")}
                   </span>
                   <p className="text-sm mt-2">{item.comment}</p>
                 </div>
