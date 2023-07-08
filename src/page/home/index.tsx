@@ -24,7 +24,7 @@ const ShootingStar = lazy(() => import('components/atoms/shootingStars'))
 const Charity = lazy(() => import('components/molecules/gift'))
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
+	const [content, setContent] = useState('opening')
 	const [isAudioPlay, setAudioPlay] = useState(false)
   const smQuery = useMediaQuery("only screen and (min-width: 700px)");
 
