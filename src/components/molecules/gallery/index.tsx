@@ -19,7 +19,7 @@ export default function ImageGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <div className="relative w-full rounded-md overflow-hidden md:h-auto h-[450px] md:aspect-square border-2 border-white px-2 pt-2">
+    <div className="relative w-full rounded-md overflow-hidden md:h-auto h-[450px] md:aspect-square border-2 border-white p-2">
       <Swiper
         style={{
           /*@ts-ignore*/
