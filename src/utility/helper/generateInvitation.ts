@@ -30,4 +30,4 @@ function decryptId(encryptedId) {
   return decrypted;
 }
 // generateGuestList()
-export {generate_guest_list, decryptId};
+export {generate_guest_list, decryptId, generateGuestList};
