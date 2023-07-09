@@ -166,7 +166,7 @@ const HomePage = () => {
 										</h1>
 										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
 											<span className='font-semibold'>Putra dari</span> <br />
-											Bapak Iman Ramadhan & Ibu Sri Mustikawarni
+											Bapak Eko Utomo & Ibu Sri Mulatsih
 										</span>
 									</div>
 									<div className='flex flex-col items-center'>
@@ -196,7 +196,7 @@ const HomePage = () => {
 										</h1>
 										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
 											<span className='font-semibold'>Putri dari</span>
-											<br /> Bapak Herry Bosscha & Ibu Ida Syadiah
+											<br /> Bapak Dudi Riyadi & Ibu Irma Noor Aini
 										</span>
 									</div>
 								</div>
