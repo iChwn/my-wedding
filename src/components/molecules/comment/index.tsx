@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck
 import { useEffect, useState } from "react";
 import Select from "react-select";

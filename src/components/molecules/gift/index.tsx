@@ -1,4 +1,5 @@
 import { lottie } from "assets/image";
+import StyledButton from "components/atoms/button/styledButton";
 import { lazy } from "react";
 import { Fade, Zoom } from 'react-reveal'
 const LottiePlayer = lazy(() => import('components/atoms/lottie'))
@@ -20,37 +21,33 @@ const Charity = () => {
             <Zoom delay={1000}>
               <div className="w-[360px] px-5 py-5 flex flex-col items-center max-w-sm overflow-hidden rounded-xl md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] shadow-md border-gray-300 border-2">
                 <p className="text-medium text-white font-poppins text-center">
-                  Bank BCA A/N Ichwan Arif Pratama
+                  Bank BTPN A/N Ichwan Arif Pratama
                   <br />
-                  No Rekening: 5865266691
+                  No Rekening: 90012644367
                 </p>
-                {/* <StyledButton
-                  content="Salin No Rekening"
-                  type="filled"
+                <StyledButton
+                  title="Salin No Rekening"
                   onClick={() => {
-                    navigator.clipboard.writeText("5865266691")
-                    toast.success("Berhasil menyalin no rekening")
+                    navigator.clipboard.writeText("90012644367")
                   }}
-                  addClasses="button-salin duration-200 hover:scale-105"
-                /> */}
+                  className="text-white bg-blue-800 duration-200 hover:scale-105 w-full py-2 mt-4"
+                />
               </div>
             </Zoom>
             <Zoom delay={1000}>
               <div className="px-5 py-5 w-[360px] flex flex-col items-center max-w-sm overflow-hidden rounded-xl md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] shadow-md border-gray-300 border-2">
                 <p className="text-medium text-white font-poppins text-center">
-                  Bank BJB A/N Salma
+                  Bank BJB A/N Salma Juniarti
                   <br />
-                  No Rekening: 0111035288101
+                  No Rekening: 2801543024
                 </p>
-                {/* <BaseButton
-                  content="Salin No Rekening"
-                  type="filled"
+                <StyledButton
+                  title="Salin No Rekening"
                   onClick={() => {
-                    navigator.clipboard.writeText("0111035288101")
-                    toast.success("Berhasil menyalin no rekening")
+                    navigator.clipboard.writeText("2801543024")
                   }}
-                  addClasses="button-salin duration-200 hover:scale-105"
-                /> */}
+                  className="text-white bg-blue-800 duration-200 hover:scale-105 w-full py-2 mt-4"
+                />
               </div>
             </Zoom>
           </div>
