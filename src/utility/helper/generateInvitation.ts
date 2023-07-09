@@ -1,6 +1,6 @@
 const CryptoJS = require("crypto-js");
 
-const names = ["Ichwan", "Aidit", "Kempeb", "Wandi", "Ananda Yuda beban", "Salma", "Toni"];
+const names = ["Ichwan", "Aidit", "Kempeb", "Wandi", "Ananda Yuda beban", "Salma", "Toni", "wdwd"];
 const encryptionKey = "SecretKey123"; // Ganti dengan kunci yang sesuai dengan kebutuhan Anda
 let generate_guest_list = [];
 

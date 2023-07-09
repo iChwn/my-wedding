@@ -4,6 +4,7 @@ import { routeUrl } from "constant";
 import Invitation from "page/home/invitation";
 import { PreLoading } from "components";
 import { decryptId } from "utility/helper/generateInvitation";
+import guest_list from "constant/guestList";
 
 const HomePage = React.lazy(() => import("page/home"))
 
@@ -11,11 +12,9 @@ const Router = () => {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search);
   const decryptedId = decryptId(queryParams.get('userid'))
-  // return (
-  //   <div>{queryParams.get('userid')}</div>
-  // )
-  
-  if(decryptedId) {
+  const isValidGuset = guest_list.find((guest) => guest.id === decryptedId)
+
+  if(isValidGuset) {
     return (
       <Suspense fallback={<PreLoading />}>
         <Routes>
