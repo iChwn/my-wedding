@@ -14,7 +14,7 @@ function AudioMusic({isPlay}:any) {
   const [isPlaying, setIsPlaying] = useState(isPlay)
   const sound = new Howl({
     src: [Sound],
-    volume: 0.3,
+    volume: 1,
     loop: true
   });
 

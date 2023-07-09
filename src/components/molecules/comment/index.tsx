@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import LottiePlayer from "components/atoms/lottie";
@@ -14,7 +15,9 @@ import {
 import { db } from "lib/firebaseInit";
 import "./custom.scss";
 import dayjs from "dayjs";
-import { random } from "lodash";
+import { useLocation } from "react-router";
+import { decryptId } from "utility/helper/generateInvitation";
+import guest_list from "constant/guestList";
 
 const options = [
   { value: "YES", label: "Hadir", emoji: "🎉" },
@@ -23,7 +26,11 @@ const options = [
 ];
 
 const CommentSection = () => {
-  const [name, setName] = useState("");
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search);
+  const decryptedId = decryptId(queryParams.get('userid'))
+  const selected_guest = guest_list.find((guest) => guest.id === decryptedId)
+  const [name, setName] = useState(selected_guest.name);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
@@ -38,6 +45,7 @@ const CommentSection = () => {
   const [attendSelect, setAttendSelect] = useState(options[0]);
   const [loadingLoadComment, setLoadingLoadComment] = useState(false);
   const [loadingSubmitComment, setLoadingSubmitComment] = useState(false);
+  const [disabledComment, setDisabledComment] = useState(false);
 
   const getComments = async () => {
     setLoadingLoadComment(true);
@@ -47,6 +55,11 @@ const CommentSection = () => {
         query(commentCollectionRef, orderBy("date", "desc"))
       );
       const message = response.docs.map((item) => item.data());
+      const checkuser = message.find((e) => e.userId === selected_guest.id);
+
+      if(checkuser) {
+        setDisabledComment(true)
+      }
       setComments(message);
     } catch (error) {
       console.log({ error });
@@ -60,7 +73,7 @@ const CommentSection = () => {
     try {
       const commentCollectionRef = collection(db, "user-saying");
       await addDoc(commentCollectionRef, {
-        userId: random(1, 1000),
+        userId: selected_guest.id,
         name,
         comment,
         attend,
@@ -118,22 +131,24 @@ const CommentSection = () => {
           <div className="w-full md:w-full px-3 mb-2 mt-2">
             <input
               required
-              className="rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white font-poppins mb-2"
+              className="rounded border border-gray-400 leading-normal resize-none w-full py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white font-poppins mb-2 disabled:bg-gray-400"
               placeholder="Ketik namamu disini"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              disabled
             />
             <textarea
               required
-              className="rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white font-poppins"
+              className="rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white font-poppins disabled:bg-gray-400"
               id="comment"
               placeholder="Ketik ucapanmu disini"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              disabled={disabledComment}
             ></textarea>
             <Select
-              className="rounded custom-select font-poppins text-[#272A33]"
+              className="rounded custom-select font-poppins text-[#272A33] disabled:bg-gray-400"
               placeholder="Konfirmasi kehadiran"
               options={options}
               defaultValue={attend}
@@ -143,6 +158,16 @@ const CommentSection = () => {
                 setAttendSelect(e)
                 setAttend(e.value)}
               }
+              isDisabled={disabledComment}
+              styles={{
+                control: (styles, { isDisabled}) => {
+                  return {
+                    ...styles,
+                    color: '#000000',
+                    backgroundColor: isDisabled ? '#9CA3AF' : 'white'
+                  }
+                },
+              }}
             />
           </div>
           <div className="w-full md:w-full flex justify-end px-3">
