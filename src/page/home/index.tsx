@@ -39,8 +39,12 @@ const HomePage = () => {
 
 	return (
 		<div className='h-full w-full flex items-center justify-center flex-col'>
-			{content === 'opening' && <Opening callback={transitionCallback} />}
-			{content === 'main-content' && (
+			  <div className={`h-full w-full   ${
+						content === 'opening' ? 'block' : 'hidden'
+					}`}>
+					<Opening callback={transitionCallback} /> 
+				</div>
+		 
 				<div
 					className={`h-full w-full bg-galaxy overflow-auto ${
 						content === 'main-content' ? 'block' : 'hidden'
@@ -384,7 +388,7 @@ const HomePage = () => {
 						</div>
 					</div>
 				</div>
-			)}
+		 
 		</div>
 	)
 }
