@@ -24,7 +24,7 @@ const ShootingStar = lazy(() => import('components/atoms/shootingStars'))
 const Charity = lazy(() => import('components/molecules/gift'))
 
 const HomePage = () => {
-	const [content, setContent] = useState('opening')
+	const [content, setContent] = useState('main-content')
 	const [isAudioPlay, setAudioPlay] = useState(false)
   const smQuery = useMediaQuery("only screen and (min-width: 700px)");
 
@@ -33,8 +33,7 @@ const HomePage = () => {
 		setContent('main-content')
 	}
 	var current_date = Date.now()
-	var finish_date = new Date('2023-07-25T00:20:00')
-
+	var finish_date = new Date('2023-12-24T08:00:00')
 	var total_ms = finish_date.getTime() - current_date
 
 	return (
@@ -208,6 +207,7 @@ const HomePage = () => {
 							<Countdown
 								date={Date.now() + total_ms}
 								renderer={({ days, hours, minutes, seconds, completed }) => {
+									console.log(total_ms)
 									return (
 										<BaseCountdown
 											days={days}
@@ -222,11 +222,11 @@ const HomePage = () => {
 							<Fade bottom>
 								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF] overflow-hidden'>
 									<span className='font-semibold text-xl'>
-										Gedung Graha Indah Karya
+										Gedung wisuda universitas YPKP
 									</span>
 									<span>
-										Jl. Golf Raya No. 2A Cisaranten Bina Harapan, <br /> Kec.
-										Arcamanik, Kota Bandung
+										Jl. Phh. Mustofa No.68, Cikutra, <br /> Kec.
+										Cibeunying Kidul, Kota Bandung, Jawa Barat
 									</span>
 								</div>
 							</Fade>
@@ -250,7 +250,7 @@ const HomePage = () => {
 											<div className='flex flex-row items-center font-poppins mb-2'>
 												<CalendarIcon width={20} height={20} color='#FFFFFF' />
 												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
-													Ahad, 24 Juli 2022
+													Ahad, 24 Desember 2023
 												</span>
 											</div>
 											<div className='flex flex-row items-center font-poppins mb-2'>
@@ -266,7 +266,7 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Gedung Graha Indah Karya
+													Gedung wisuda universitas YPKP
 												</span>
 											</div>
 										</div>
@@ -286,7 +286,7 @@ const HomePage = () => {
 											<div className='flex flex-row items-center font-poppins mb-2'>
 												<CalendarIcon width={20} height={20} color='#FFFFFF' />
 												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
-													Ahad, 24 Juli 2022
+													Ahad, 24 Desember 2023
 												</span>
 											</div>
 											<div className='flex flex-row items-center font-poppins mb-2'>
@@ -304,7 +304,7 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Gedung Graha Indah Karya
+													Gedung wisuda universitas YPKP
 												</span>
 											</div>
 										</div>

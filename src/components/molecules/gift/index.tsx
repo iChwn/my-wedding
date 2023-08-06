@@ -1,10 +1,13 @@
 import { lottie } from "assets/image";
 import StyledButton from "components/atoms/button/styledButton";
-import { lazy } from "react";
+import { lazy, useState } from "react";
 import { Fade, Zoom } from 'react-reveal'
 const LottiePlayer = lazy(() => import('components/atoms/lottie'))
  
 const Charity = () => {
+  const [isSalma, setSalma] = useState(false)
+  const [isIchwan, setIchwan] = useState(false)
+
   return (
     <div className="px-5 w-full mt-5 overflow-hidden">
       <div className="flex flex-col items-center gap-y-6 py-5 border-t-2 border-gray-500">
@@ -26,27 +29,35 @@ const Charity = () => {
                   No Rekening: 90012644367
                 </p>
                 <StyledButton
-                  title="Salin No Rekening"
+                  title={isIchwan ? "No Rekening Tersalin!" : "Salin No Rekening"}
                   onClick={() => {
+                    setIchwan(true)
                     navigator.clipboard.writeText("90012644367")
+                    setTimeout(() => {
+                      setIchwan(false)
+                    }, 1000);
                   }}
-                  className="text-white bg-blue-800 duration-200 hover:scale-105 w-full py-2 mt-4"
+                  className={`text-white ${isIchwan ? "bg-green-500" : "bg-blue-800" } duration-200 hover:scale-105 w-full py-2 mt-4`}
                 />
               </div>
             </Zoom>
             <Zoom delay={1000}>
               <div className="px-5 py-5 w-[360px] flex flex-col items-center max-w-sm overflow-hidden rounded-xl md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] shadow-md border-gray-300 border-2">
                 <p className="text-medium text-white font-poppins text-center">
-                  Bank BJB A/N Salma Juniarti
+                  Bank BCA A/N Salma Juniarti
                   <br />
                   No Rekening: 2801543024
                 </p>
                 <StyledButton
-                  title="Salin No Rekening"
+                  title={isSalma ? "No Rekening Tersalin!" : "Salin No Rekening"}
                   onClick={() => {
+                    setSalma(true)
                     navigator.clipboard.writeText("2801543024")
+                    setTimeout(() => {
+                      setSalma(false)
+                    }, 1000);
                   }}
-                  className="text-white bg-blue-800 duration-200 hover:scale-105 w-full py-2 mt-4"
+                  className={`text-white ${isSalma ? "bg-green-500" : "bg-blue-800" } duration-200 hover:scale-105 w-full py-2 mt-4`}
                 />
               </div>
             </Zoom>
