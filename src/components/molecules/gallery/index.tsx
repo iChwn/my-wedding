@@ -50,6 +50,12 @@ export default function ImageGallery() {
         <SwiperSlide>
           <img alt="" src={wedding_image.G6} />
         </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={wedding_image.G7} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={wedding_image.G8} />
+        </SwiperSlide>
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -77,6 +83,12 @@ export default function ImageGallery() {
         </SwiperSlide>
         <SwiperSlide>
           <img alt="" src={wedding_image.G6} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={wedding_image.G7} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img alt="" src={wedding_image.G8} />
         </SwiperSlide>
       </Swiper>
     </div>
