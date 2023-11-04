@@ -24,7 +24,7 @@ const ShootingStar = lazy(() => import('components/atoms/shootingStars'))
 const Charity = lazy(() => import('components/molecules/gift'))
 
 const HomePage = () => {
-	const [content, setContent] = useState('main-content')
+	const [content, setContent] = useState('opening')
 	const [isAudioPlay, setAudioPlay] = useState(false)
   const smQuery = useMediaQuery("only screen and (min-width: 700px)");
 
@@ -158,18 +158,18 @@ const HomePage = () => {
 											</Fade>
 											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
 												<img
-													src={wedding_image.JanakaPhoto}
+													src={wedding_image.DereynaPhoto}
 													alt=''
 													className='w-full h-full object-cover'
 												/>
 											</div>
 										</div>
 										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
-											Ichwan Arif Pratama
+											Salma Juniarti
 										</h1>
 										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
-											<span className='font-semibold'>Putra dari</span> <br />
-											Bapak Eko Utomo & Ibu Sri Mulatsih
+											<span className='font-semibold'>Putri dari</span>
+											<br /> Bapak Dudi Riyadi & Ibu Irma Noor Aini
 										</span>
 									</div>
 									<div className='flex flex-col items-center'>
@@ -188,18 +188,18 @@ const HomePage = () => {
 											</Fade>
 											<div className='rounded-full h-[150px] w-[150px] overflow-hidden'>
 												<img
-													src={wedding_image.DereynaPhoto}
+													src={wedding_image.JanakaPhoto}
 													alt=''
 													className='w-full h-full object-cover'
 												/>
 											</div>
 										</div>
 										<h1 className='font-black-hole text-center md:text-5xl text-4xl text-[#FFFFFF] my-4'>
-											Salma Juniarti
+											Ichwan Arif Pratama
 										</h1>
 										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
-											<span className='font-semibold'>Putri dari</span>
-											<br /> Bapak Dudi Riyadi & Ibu Irma Noor Aini
+											<span className='font-semibold'>Putra dari</span> <br />
+											Bapak Eko Utomo & Ibu Sri Mulatsih
 										</span>
 									</div>
 								</div>

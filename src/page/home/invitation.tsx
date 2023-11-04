@@ -1,7 +1,7 @@
 const Invitation = () => {
   return (
     <div className="h-full w-full flex items-center justify-center flex-col bg-galaxy text-white">
-      Wkwkwk ga di undang :()
+      Halaman yang anda cari tidak ada
     </div>
   )
 }

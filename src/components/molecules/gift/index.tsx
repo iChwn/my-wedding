@@ -24,9 +24,9 @@ const Charity = () => {
             <Zoom delay={1000}>
               <div className="w-[360px] px-5 py-5 flex flex-col items-center max-w-sm overflow-hidden rounded-xl md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] shadow-md border-gray-300 border-2">
                 <p className="text-medium text-white font-poppins text-center">
-                  Bank BTPN A/N Ichwan Arif Pratama
+                  Bank BCA Ichwan Arif Pratama
                   <br />
-                  No Rekening: 90012644367
+                  No Rekening: 7772555191
                 </p>
                 <StyledButton
                   title={isIchwan ? "No Rekening Tersalin!" : "Salin No Rekening"}

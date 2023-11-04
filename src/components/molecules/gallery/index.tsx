@@ -33,31 +33,22 @@ export default function ImageGallery() {
         className="mySwiper2"
       >
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G2} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G3} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G4} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G5} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G6} />
         </SwiperSlide>
       </Swiper>
       <Swiper
@@ -70,31 +61,22 @@ export default function ImageGallery() {
         className="mySwiper pb-0"
       >
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G1} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G2} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G3} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G4} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G5} />
         </SwiperSlide>
         <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img alt="" src={wedding_image.WeddingPhoto1} />
+          <img alt="" src={wedding_image.G6} />
         </SwiperSlide>
       </Swiper>
     </div>

@@ -1,3 +1,9 @@
-export { default as WeddingPhoto1 } from "./photo1.jpg";
-export { default as JanakaPhoto } from "./janaka.jpg";
-export { default as DereynaPhoto } from "./dereyna.jpg";
+export { default as WeddingPhoto1 } from "./photo1.png";
+export { default as JanakaPhoto } from "./ichwan-solo.jpg";
+export { default as DereynaPhoto } from "./salma-solo.jpg";
+export { default as G1 } from "./g-1.jpg";
+export { default as G2 } from "./G2.jpg";
+export { default as G3 } from "./G3.jpg";
+export { default as G4 } from "./G4.jpg";
+export { default as G5 } from "./G5.jpg";
+export { default as G6 } from "./G6.jpg";
