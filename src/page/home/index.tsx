@@ -256,7 +256,7 @@ const HomePage = () => {
 											<div className='flex flex-row items-center font-poppins mb-2'>
 												<ClockIcon width={20} height={20} color='#FFFFFF' />
 												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
-													08.00 Wib
+													08.00 - 10.00 WIB
 												</span>
 											</div>
 											<div className='flex flex-row items-center font-poppins mb-2'>
@@ -292,7 +292,7 @@ const HomePage = () => {
 											<div className='flex flex-row items-center font-poppins mb-2'>
 												<ClockIcon width={20} height={20} color='#FFFFFF' />
 												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
-													10.00  - 14.00 Wib
+													11.00  - 14.00 WIB
 												</span>
 											</div>
 											<div className='flex flex-row items-center font-poppins mb-2'>
@@ -345,20 +345,20 @@ const HomePage = () => {
 											<li className="mb-10 ml-4">
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
 													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Februari 2018</time>
-													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kita bertemu secara online di Facebook grup vvibu</h3>
-													<p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Kita hanya saling bertukar username instagram saja dan hanya cukup saling tau tidak pernah berbincang antara satu sama lain.</p>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kita bertemu secara online di Facebook grup wibu</h3>
+													<p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Kami hanya saling bertukar username instagram saja dan hanya cukup saling tau tidak pernah berbincang antara satu sama lain.</p>
 											</li>
 											<li className="mb-10 ml-4">
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
-													<time className="mb-1 text-sm font-normal leading-none text-gray-400">March 2020</time>
-													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kita saling mengenal dan berbincang</h3>
-													<p className="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Maret 2020</time>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kami saling mengenal dan berbincang</h3>
+													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Kamipun memiliki ketertatikan antara satu sama lain dan memutuskan untuk menjalin sebuah hubungan yang menuju jenjang pernikahan.</p>
 											</li>
 											<li className="ml-4">
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
-													<time className="mb-1 text-sm font-normal leading-none text-gray-400">April 2022</time>
-													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">E-Commerce UI code in Tailwind CSS</h3>
-													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p>
+													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Desember 2023</time>
+													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Menikah</h3>
+													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Kami memutuskan untuk menikah di tahun ini, suatu langkah besar yang kami ambil untuk mengukir cerita bersama :).</p>
 											</li>
 									</ol>
 									</div>

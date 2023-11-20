@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck 
 import { useEffect, useState } from "react";
-import Sound from "assets/sound/suzuma.mp3"
+import Sound from "assets/sound/interstellar.mp3"
 import {Howl, Howler} from 'howler';
 import StyledButton from "../button/styledButton";
 import {
