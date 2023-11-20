@@ -117,7 +117,7 @@ const HomePage = () => {
 									Ichwan & Salma
 								</h1>
 								<span className='font-poppins text-center md:text-lg text-xs text-gray-500 tracking-[4px]'>
-									AHAD, 24 JULI 2022
+									AHAD, 24 DESEMBER 2023
 								</span>
 							</Flip>
 							{/* <Fade delay={1500}>
@@ -222,10 +222,10 @@ const HomePage = () => {
 							<Fade bottom>
 								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF] overflow-hidden'>
 									<span className='font-semibold text-xl'>
-										Gedung wisuda universitas YPKP
+										Graha Sangga Buana
 									</span>
 									<span>
-										Jl. Phh. Mustofa No.68, Cikutra, <br /> Kec.
+										Jl. Phh. Mustofa, Cikutra,  <br /> Kec.
 										Cibeunying Kidul, Kota Bandung, Jawa Barat
 									</span>
 								</div>
@@ -237,7 +237,7 @@ const HomePage = () => {
 									</div>
 								</Fade>
 								<Zoom>
-									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
+									<div className='grid col-span-4 relative md:w-[350px] w-full'>
 										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2 relative'>
 											{smQuery && (
 												<div className='absolute w-[150px] right-[-10px] top-[-30px]'>
@@ -266,14 +266,14 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Gedung wisuda universitas YPKP
+													Graha Sangga Buana
 												</span>
 											</div>
 										</div>
 									</div>
 								</Zoom>
 								<Zoom delay={300}>
-									<div className='h-[200px] grid col-span-4 relative md:w-[350px] w-full'>
+									<div className='grid col-span-4 relative md:w-[350px] w-full'>
 										<div className='group shadow-md min-w-[250px] duration-200 delay-75 w-full px-6 py-4 md:bg-[#0F1C4F]/[0.80] bg-[#0F1C4F]/[0.50] rounded-lg border-gray-300 border-2'>
 											{smQuery && (
 												<div className='absolute w-[150px] right-[-30px] top-[-30px]'>
@@ -292,9 +292,7 @@ const HomePage = () => {
 											<div className='flex flex-row items-center font-poppins mb-2'>
 												<ClockIcon width={20} height={20} color='#FFFFFF' />
 												<span className='ml-2 mt-[1px] text-[#FFFFFF]'>
-													Sesi 1: 11.00 Wib - 12.30 Wib
-													<br />
-													Sesi 2: 12.30 Wib - 14.00 Wib
+													10.00  - 14.00 Wib
 												</span>
 											</div>
 											<div className='flex flex-row items-center font-poppins mb-2'>
@@ -304,7 +302,7 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Gedung wisuda universitas YPKP
+													Graha Sangga Buana
 												</span>
 											</div>
 										</div>
