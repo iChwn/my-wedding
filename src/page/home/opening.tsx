@@ -18,7 +18,7 @@ const Opening = ({callback}:any) => {
   const smQuery = useMediaQuery("only screen and (min-width: 700px)");
   // const mdQuery = useMediaQuery("only screen and (min-width: 1025px)");
   const { rive, RiveComponent } = useRive({
-    src: smQuery ? '/invitation-2-black.riv' : '/invitation-mobile-black.riv',
+    src: smQuery ? '/invitation-2-black2.riv' : '/invitation-mobile-black.riv',
     autoplay: true,
     stateMachines: "State Machine 1",
     animations: 'Idle',
