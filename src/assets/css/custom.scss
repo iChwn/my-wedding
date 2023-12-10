@@ -5,3 +5,19 @@
   color: #FFFFFF;
   margin-top: 10px;
 }
+
+.accent-flower1 {
+  position: absolute;
+  width: 163px;
+  right: -77px;
+  transform: scale(-1, 1) rotate(10deg);
+  top: 16px;
+}
+
+.accent-flower2 {
+  position: absolute;
+  width: 163px;
+  left: -77px;
+  transform: scale(-1, 1) rotate(10deg);
+  bottom: -35px;
+}

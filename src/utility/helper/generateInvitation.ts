@@ -1,6 +1,7 @@
 const CryptoJS = require("crypto-js");
 
-const names = ["Ichwan", "Aidit", "Kempeb", "Wandi", "Ananda Yuda beban", "Salma", "Toni", "wdwd"];
+const names = ["Ichwan", "Adityawan Chandra", "Kempeb", "Wandi", "Ananda Yuda beban", "Salma", "Toni", "wdwd"];
+const privateNames = ["Lisa"];
 const encryptionKey = "SecretKey123"; // Ganti dengan kunci yang sesuai dengan kebutuhan Anda
 let generate_guest_list = [];
 
@@ -18,7 +19,8 @@ function generateGuestList() {
     return {
       id: id,
       encryptedId: encryptedId,
-      name: name
+      name: name,
+      isPublic: false
     };
   });
   console.log(generate_guest_list)
@@ -29,5 +31,5 @@ function decryptId(encryptedId) {
   const decrypted = CryptoJS.AES.decrypt(base64Encrypted, encryptionKey).toString(CryptoJS.enc.Utf8);
   return decrypted;
 }
-// generateGuestList()
+generateGuestList()
 export {generate_guest_list, decryptId, generateGuestList};

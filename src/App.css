@@ -77,6 +77,40 @@ button {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
+
+.circle-black {
+  width: 50px;
+  height: 50px;
+  background: #191932;
+  border-radius: 5em;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.4s;
+  color: #fff;
+  display: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.circle-black-scale::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background: #191932;
+}
+.circle-black-scale:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+.circle-black-scale:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
 .scale-circle {
   display: block !important;
   -webkit-animation: scaleMe 3s;

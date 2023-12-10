@@ -31,7 +31,7 @@ const CommentSection = () => {
   const queryParams = new URLSearchParams(location.search);
   const decryptedId = decryptId(queryParams.get('userid'))
   const selected_guest = guest_list.find((guest) => guest.id === decryptedId)
-  const [name, setName] = useState(selected_guest.name);
+  const [name, setName] = useState(selected_guest.isPublic ? "" :selected_guest.name);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
@@ -137,7 +137,7 @@ const CommentSection = () => {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              disabled
+              disabled={selected_guest.isPublic ? false : true}
             />
             <textarea
               required
@@ -146,7 +146,7 @@ const CommentSection = () => {
               placeholder="Ketik ucapanmu disini"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              disabled={disabledComment}
+              disabled={selected_guest.isPublic ? false : disabledComment}
             ></textarea>
             <Select
               className="rounded custom-select font-poppins text-[#272A33] disabled:bg-gray-400"
@@ -159,7 +159,7 @@ const CommentSection = () => {
                 setAttendSelect(e)
                 setAttend(e.value)}
               }
-              isDisabled={disabledComment}
+              isDisabled={selected_guest.isPublic ? false : disabledComment}
               styles={{
                 control: (styles, { isDisabled}) => {
                   return {
@@ -189,7 +189,7 @@ const CommentSection = () => {
             return (
               <div key={item.userId} className="flex">
                 <div className="flex-1 align-sp border md:bg-transparent bg-[#551E63]/[0.30] border-gray-500 rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed text-[#FFFFFF] font-poppins">
-                  <strong className={`${index+1 === comments.length && 'text-[#FFD700] animate-pulse'}`}>{index+1 === comments.length && "[The First 👑]"} {item.name} - {options.find(e => e.value === item.attend).label} {options.find(e => e.value === item.attend).emoji}</strong>
+                  <strong> {item.name} - {options.find(e => e.value === item.attend).label} {options.find(e => e.value === item.attend).emoji}</strong>
                   <br />
                   <span className="text-xs text-gray-400">
                     {dayjs(item.date?.seconds * 1000).format("DD MMMM YYYY HH:mm")}

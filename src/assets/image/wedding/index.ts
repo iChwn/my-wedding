@@ -9,3 +9,4 @@ export { default as G5 } from "./G5.webp";
 export { default as G6 } from "./G6.webp";
 export { default as G7 } from "./G7.webp";
 export { default as G8 } from "./G8.webp";
+export { default as Depan } from "./depan.jpg";

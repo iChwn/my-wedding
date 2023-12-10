@@ -8,4 +8,6 @@ export { default as astronot_mancing } from "./astronot-mancing.svg";
 export { default as astronot_toilet } from "./astronot-toilet.svg";
 export { default as astronot_dadah } from "./astronot-dadah.svg";
 export { default as spaceship } from "./spaceship.svg";
+export { default as tree4 } from "./tree-4.png";
+export { default as white_envelope } from "./white-envelope.svg";
  
