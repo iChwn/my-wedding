@@ -170,7 +170,7 @@ const Invitation = () => {
 										</h1>
 										<span className='font-poppins text-center mt-2 w-[350px] text-[#FFFFFF]'>
 											<span className='font-semibold'>Putri dari</span>
-											<br /> Bapak Dudi Riyadi & Ibu Irma Noor Aini
+											<br /> Bapak Dudi Riyadi & Ibu Irma Nooraini
 										</span>
 									</div>
 									<div className='flex flex-col items-center'>

@@ -1,6 +1,6 @@
 export { default as WeddingPhoto1 } from "./photo1.webp";
-export { default as JanakaPhoto } from "./ichwan-solo.webp";
-export { default as DereynaPhoto } from "./salma-solo.webp";
+export { default as JanakaPhoto } from "./ichwan-solo.jpg";
+export { default as DereynaPhoto } from "./salma-solo.jpg";
 export { default as G1 } from "./g-1.webp";
 export { default as G2 } from "./G2.webp";
 export { default as G3 } from "./G3.webp";

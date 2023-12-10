@@ -21,3 +21,27 @@
   transform: scale(-1, 1) rotate(10deg);
   bottom: -35px;
 }
+
+.accent-test {
+  position: absolute;
+  width: 250px;
+  right: -145px;
+  transform: scale(-1, 1) rotate(75deg);
+}
+
+.accent-test-m1 {
+  position: absolute;
+  width: 250px;
+  right: -145px;
+  transform: scale(-1, 1) rotate(75deg);
+  top: -80px;
+}
+
+
+.accent-test-m2{
+  position: absolute;
+  width: 250px;
+  transform: scale(-1, 1) rotate(75deg);
+  bottom: -61px;
+  left: -85px;
+}

@@ -9,3 +9,5 @@ export { default as RocketIdle } from "./rocket-idle.lottie";
 export { default as GiftAstronaut } from "./gift-astronout.lottie";
 export { default as BlackHoleSpin } from "./black-hole-spin.lottie";
 export { default as LoadingPlane } from "./loading-plane.lottie";
+export { default as Tset } from "./love-plane.lottie";
+export { default as FlyingLove } from "./love-terbang.lottie";

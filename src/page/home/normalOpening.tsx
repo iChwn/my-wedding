@@ -4,10 +4,10 @@ import "assets/css/custom.scss"
 import { useLocation } from 'react-router';
 import { decryptId } from 'utility/helper/generateInvitation';
 import guest_list from 'constant/guestList';
-import { StyledButton } from 'components';
+import { LottiePlayer, StyledButton } from 'components';
 // import { useNavigate } from 'react-router';
 import { Flip, Fade } from "react-reveal";
-import { background_image, wedding_image } from 'assets/image';
+import { background_image, lottie, wedding_image } from 'assets/image';
 
 const Opening = ({callback}:any) => {
   const location = useLocation()
@@ -20,26 +20,35 @@ const Opening = ({callback}:any) => {
     <div className="h-screen w-full flex items-center justify-center flex-col bg-[#dfcda9] relative overflow-hidden z-20">
     <div id="transition" className={`circle-black circle-black-scale ${isExit && 'scale-circle'}`}></div>  
     <Fade right>
-      <img
+      <div className="accent-test-m1 md:hidden block">
+        <LottiePlayer lottieFile={lottie.Tset} />
+      </div>
+      {/* <img
         src={background_image.tree4}
         alt=""
         className="accent-flower1 md:hidden block"
-      />
+      /> */}
     </Fade>
     <Fade left>
-      <img
+      <div className="accent-test-m2 md:hidden block">
+        <LottiePlayer lottieFile={lottie.Tset} />
+      </div>
+      {/* <img
         src={background_image.tree4}
         alt=""
         className="accent-flower2 md:hidden block"
-      />
+      /> */}
     </Fade>
     <Fade duration={1500}>
       <div className="relative md:w-[400px] w-[200px] md:h-[400px] h-[200px] md:mb-[-55px] mb-[-25px]">
-        <img
+        <div className="accent-test md:block hidden">
+          <LottiePlayer lottieFile={lottie.Tset} />
+        </div>
+        {/* <img
           src={background_image.tree4}
           alt=""
           className="accent-flower1 md:block hidden"
-        />
+        /> */}
         <img
           src={wedding_image.Depan}
           alt=""
