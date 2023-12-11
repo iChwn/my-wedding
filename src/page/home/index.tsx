@@ -1,4 +1,4 @@
-import { lazy, useState } from 'react'
+import { lazy, useEffect, useState } from 'react'
 import { Fade, Zoom, Flip } from 'react-reveal'
 import { background_image, lottie, wedding_image } from 'assets/image'
 import {
@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/solid'
 import 'assets/css/custom.scss'
 import { useMediaQuery } from 'utility/helper'
+import { isValidGuset } from 'utility/helper/dataMutation'
 
 const Opening = lazy(() => import('./opening'))
 const Countdown = lazy(() => import('react-countdown'))
@@ -335,7 +336,9 @@ const HomePage = () => {
 								</Fade>
 								<Zoom>
 									<div className='w-full mt-5'>
-										<ImageGallery />
+										{isValidGuset.isPhotoShow !== false && (
+											<ImageGallery />
+										)}
 										<ol className="relative border-l border-gray-200 mt-5">
 											{smQuery && (
 												<div className='absolute w-full z-[-1] opacity-50'>
@@ -379,7 +382,9 @@ const HomePage = () => {
 									</div>
 								</Zoom>
 							</div>
-							<Charity />
+							{isValidGuset.isShowWeddingGift !== false && (
+								<Charity />
+							)}
 							{/* <GiftSection /> */}
           		<Footer />
 							<div className='w-full h-3'></div>

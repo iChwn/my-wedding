@@ -1,7 +1,6 @@
 const CryptoJS = require("crypto-js");
 
-const names = ["Ichwan", "Adityawan Chandra", "Kempeb", "Wandi", "Ananda Yuda beban", "Salma", "Toni", "wdwd"];
-const privateNames = ["Lisa"];
+const names = ["Bpk/Ibu/Saudara/i", "Bpk/Ibu/Saudara/i"];
 const encryptionKey = "SecretKey123"; // Ganti dengan kunci yang sesuai dengan kebutuhan Anda
 let generate_guest_list = [];
 
@@ -20,7 +19,9 @@ function generateGuestList() {
       id: id,
       encryptedId: encryptedId,
       name: name,
-      isPublic: false
+      isPublic: false,
+      isPhotoShow: true,
+      isShowWeddingGift: true
     };
   });
   console.log(generate_guest_list)

@@ -2,6 +2,8 @@ import _ from 'lodash'
 import type {
 	InitialStateCheckboxType,
 } from './types'
+import { decryptId } from './generateInvitation'
+import guest_list from 'constant/guestList'
 
 const handleChangeField = (event: any, initialSate: any) => {
 	const clone_forms = _.cloneDeep(initialSate)
@@ -113,6 +115,12 @@ const assignOptionByName = (formList: any, name: string, value: any) => {
 	return formList.filter((data: any) => data.name === name)[0].options = value || []
 }
 
+
+// const location = useLocation()
+const queryParams = new URLSearchParams(window.location.search);
+const decryptedId = decryptId(queryParams.get('userid'))
+const isValidGuset = guest_list.find((guest) => guest.id === decryptedId)
+
 export {
 	handleChangeField,
 	handleChangeSelect,
@@ -123,5 +131,6 @@ export {
 	assignOptionByName,
   assignValueByName,
 	getOptionsByName,
-	getvalueByName
+	getvalueByName,
+	isValidGuset
 }
