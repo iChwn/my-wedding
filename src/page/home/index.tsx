@@ -223,7 +223,7 @@ const HomePage = () => {
 							<Fade bottom>
 								<div className='z-[1] flex flex-col text-center font-poppins mt-3 mb-5 gap-y-4 border-y-2 border-gray-300 py-3 text-[#FFFFFF] overflow-hidden'>
 									<span className='font-semibold text-xl'>
-										Graha Sangga Buana
+										Gedung Sangga Buana YPKP
 									</span>
 									<span>
 										Jl. Phh. Mustofa, Cikutra,  <br /> Kec.
@@ -267,7 +267,7 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Graha Sangga Buana
+													Gedung Sangga Buana YPKP
 												</span>
 											</div>
 										</div>
@@ -303,7 +303,7 @@ const HomePage = () => {
 													color='#FFFFFF'
 												/>
 												<span className='ml-2 mt-[1px] font-semibold text-[#FFFFFF]'>
-													Graha Sangga Buana
+													Gedung Sangga Buana YPKP
 												</span>
 											</div>
 										</div>
