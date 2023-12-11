@@ -34,7 +34,7 @@ const guest_list = [
     {
         "id": "0005",
         "encryptedId": "VTJGc2RHVmtYMStYenpDZWJHbXdUenpxZDVSZWZ1ZTN4dWxpUk5SeGQrST0",
-        "name": "Febrian P",
+        "name": "Febryan P",
         "isPublic": false,
         "isPhotoShow": true,
         "isShowWeddingGift": true
