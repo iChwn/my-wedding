@@ -14,7 +14,40 @@ const guest_list = [
         "isPublic": false,
         "isPhotoShow": true,
         "isShowWeddingGift": true
+    },
+     {
+        "id": "0003",
+        "encryptedId": "VTJGc2RHVmtYMSt4UmJpOTRtUUFsY3p6TWlWdjJlY1lDK0dNbGVMbWU5cz0",
+        "name": "Neni K",
+        "isPublic": false,
+        "isPhotoShow": true,
+        "isShowWeddingGift": true
+    },
+    {
+        "id": "0004",
+        "encryptedId": "VTJGc2RHVmtYMTk0ZTl5SlBuM29xakpDc3QrRFY2TVIvUmdVV0hBcWZmND0",
+        "name": "Eka M",
+        "isPublic": false,
+        "isPhotoShow": true,
+        "isShowWeddingGift": true
+    },
+    {
+        "id": "0005",
+        "encryptedId": "VTJGc2RHVmtYMStYenpDZWJHbXdUenpxZDVSZWZ1ZTN4dWxpUk5SeGQrST0",
+        "name": "Febrian P",
+        "isPublic": false,
+        "isPhotoShow": true,
+        "isShowWeddingGift": true
+    },
+    {
+        "id": "0006",
+        "encryptedId": "VTJGc2RHVmtYMStvSm8rRjhOQjJBVjVROXhQNUxqTGcxcFduSDRhWGRQVT0",
+        "name": "Adityawan C",
+        "isPublic": false,
+        "isPhotoShow": true,
+        "isShowWeddingGift": true
     }
 ]
 
 export default guest_list;
+ 
