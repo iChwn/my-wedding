@@ -355,7 +355,7 @@ const HomePage = () => {
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
 													<time className="mb-1 text-sm font-normal leading-none text-gray-400">Maret 2020</time>
 													<h3 className="text-lg font-semibold text-gray-900 dark:text-white">Awal kami saling bertemu dan berbincang</h3>
-													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Kamipun memiliki ketertatikan antara satu sama lain dan memutuskan untuk menjalin sebuah hubungan yang menuju jenjang pernikahan.</p>
+													<p className="text-base font-normal text-gray-500 dark:text-gray-400">Kamipun memiliki ketertarikan antara satu sama lain dan memutuskan untuk menjalin sebuah hubungan yang menuju jenjang pernikahan.</p>
 											</li>
 											<li className="ml-4">
 													<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white"></div>
