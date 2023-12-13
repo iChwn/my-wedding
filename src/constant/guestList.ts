@@ -46,6 +46,14 @@ const guest_list = [
         "isPublic": false,
         "isPhotoShow": true,
         "isShowWeddingGift": true
+    },
+    {
+        "id": "0007",
+        "encryptedId": "VTJGc2RHVmtYMThiYi82LzFDNGlQc3czb0UyU2hMVlNtUHh4d1pTTkl5UT0",
+        "name": "Rahmia Wasnah El Qisti",
+        "isPublic": false,
+        "isPhotoShow": true,
+        "isShowWeddingGift": true
     }
 ]
 
