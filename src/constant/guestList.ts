@@ -4,7 +4,7 @@ const guest_list = [
         "encryptedId": "VTJGc2RHVmtYMTlUc1lCZ2tBUHg3R0Y1T0N0dWlSNVl1ZDBLT1BVdENRRT0",
         "name": "Bpk/Ibu/Saudara/i di Tempat", // public punya ibu
         "isPublic": true,
-        "isPhotoShow": false,
+        "isPhotoShow": true,
         "isShowWeddingGift": true
     },
     {
